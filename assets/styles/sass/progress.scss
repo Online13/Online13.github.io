@@ -1,0 +1,29 @@
+.progress {
+    width: 100%;
+
+    .progress-bar {
+        width: 90%;
+        height: 3px;
+        background-color: silver;
+        margin: 22px 0;
+        position: relative;
+
+        @for $i from 0 through 100 {
+            [data-value='#{$i}'] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                @if $i < 25 {
+                    background-color: red;
+                } @else if $i < 75  {
+                    background-color: rgb(228, 228, 103);
+                } @else {
+                    background-color: rgb(74, 202, 74);
+                }
+                width: $i + 0% !important;
+            }
+        }
+    }
+
+}
