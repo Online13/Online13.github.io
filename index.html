@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <div class="img">
-    </div>
     <div class="container">
         <div class="header">
             <div class="header-title">
@@ -30,26 +28,7 @@
                         </h3>
                         <div class="section-content">
                             <ul class="about">
-                                <li>
-                                    <h4>GITHUB</h4>
-                                    <small class="value">https://github.com/Online13</small>
-                                </li>
-                                <li>
-                                    <h4>ADRESSE</h4>
-                                    <small class="value">Lot B52 Cite Ankany Sambatra Itaosy</small>
-                                </li>
-                                <li>
-                                    <h4>DATE DE NAISSANCE</h4>
-                                    <small class="value">13 juin 2001</small>
-                                </li>
-                                <li>
-                                    <h4>E-MAIL</h4>
-                                    <small class="value">rratiarivelo@gmail.com</small>
-                                </li>
-                                <li>
-                                    <h4>NUMERO</h4>
-                                    <small class="value">034 13 133 73</small>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -57,23 +36,8 @@
                 <section class="section">
                     <div class="section-center">
                         <h3> <img src="./assets/images/3571681.svg" alt="Langue" class="icon icon-top"> LANGUES</h3>
-                        <div class="section-content">
-                            <div class="progress">
-                                <small class="description">
-                                    Français (niveau B2)
-                                </small>
-                                <div class="progress-bar">
-                                    <div data-value="80"></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <small class="description">
-                                    Anglais (niveau Terminal, ecrit)
-                                </small>
-                                <div class="progress-bar">
-                                    <div data-value="40"></div>
-                                </div>
-                            </div>
+                        <div class="section-content langue">
+                            
                         </div>
                     </div>
                 </section>
@@ -82,9 +46,7 @@
                         <h3><img src="./assets/images/puzzle.png" alt="ho" class="icon"> CENTRE D'INTERET</h3>
                         <div class="section-content">
                             <ul class="ci">
-                                <li>dessiner</li>
-                                <li>jeu d'echec</li>
-                                <li>jeux video</li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -97,17 +59,7 @@
                         </h3>
                         <div class="section-content">
                             <ul class="cursus">
-                                <li><small>2018 – 2019</small>
-                                    <span>Deuxième année en Mathématiques Informatique à
-                                        l’Université d’Antananarivo</span>
-                                </li>
-                                <li><small>2017 – 2018</small>
-                                    <span>Première année en Mathématiques Informatique à
-                                        l’Université d’Antananarivo</span>
-                                </li>
-                                <li><small>mars 2018</small><span>Obtention du Diplôme d’Étude en Langue Française
-                                        (DELF) niveau B2</span></li>
-                                <li><small>2016 – 2017</small><span>Obtention du Baccalauréat série C</span></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -118,7 +70,7 @@
                         </h3>
                         <div class="section-content">
                             <ul class="form">
-                                <li><small>Janvier 2020</small><span>initiation au réseau a la MISA</span></li>
+                               
                             </ul>
                         </div>
                     </div>
@@ -128,14 +80,8 @@
                         <h3><img src="./assets/images/coding.png" alt="dev" class="icon icon-top"> COMPETENCES
                             INFORMATIQUES</h3>
                         <div class="section-content">
-                            <ul>
-                                <li>Création de programmes en C/C++</li>
-                                <li>Création de sites statiques avec HTML5 et CSS3 (autoformation)</li>
-                                <li>Ajout d’interaction avec l’utilisateur sur un site en utilisant Javascript
-                                    (autoformation)</li>
-                                <li>Versionner mes projets avec Git (autoformation)</li>
-                                <li>Création d’interface utilisateur (UI) avec la bibliothèque ReactJS (autoformation)
-                                </li>
+                            <ul class="comp">
+                                
                             </ul>
                         </div>
                     </div>
@@ -143,31 +89,8 @@
             </div>
         </div>
     </div>
-    <script>
-        window.addEventListener('load', e => {
-            const btn = document.querySelector('.btn-scroll');
-            const html = document.querySelector('html');
-            btn.addEventListener('click', e => {
-                let options = {};
-                if (btn.classList.contains('onbottom')) {
-                    btn.classList.remove('onbottom');
-                    options = {
-                        top: -html.getBoundingClientRect().height,
-                        left: 0,
-                        behavior: 'smooth'
-                    }
-                } else {
-                    btn.classList.add('onbottom');
-                    options = {
-                        top: html.getBoundingClientRect().height,
-                        left: 0,
-                        behavior: 'smooth'
-                    }
-                }
-                document.querySelector('html').scrollTo(options)
-            });
-        });
-    </script>
+    <script src="./assets/scripts/models.js"></script>
+    <script type="text/javascript" src="./assets/scripts/scrollBtn.js"></script>
 </body>
 
 </html>

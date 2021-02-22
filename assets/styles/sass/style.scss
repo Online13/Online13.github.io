@@ -3,7 +3,6 @@ $wh: 200px;
 @import './bases.scss';
 @import './layout.scss';
 @import './progress.scss';
-@import './img.scss';
 
 .container {
     max-width: 880px;
@@ -36,6 +35,16 @@ $wh: 200px;
 .icon {
     width: 35px;
     height: 35px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(360deg);
+    }
+}
+
+.title .icon {
+    animation: rotate 1s infinite 1s;
 }
 
 .icon-top {
