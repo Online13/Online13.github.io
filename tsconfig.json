@@ -21,7 +21,15 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Absolute path */
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@shadcn/*": [
+        "./src/app/shadcn/*"
+      ]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

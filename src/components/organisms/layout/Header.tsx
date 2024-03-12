@@ -6,28 +6,23 @@ function Header() {
 			<div className="w-40">
 				<h1>R</h1>
 			</div>
-			<nav>
-				<ul className="flex items-center gap-x-20 text-lg">
+			<nav className="flex items-center gap-14">
+				<ul className="flex items-center gap-x-14 text-lg">
 					<li>
 						<NavLink to="#about" target="_parent">
-							about
+							About
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="#experiences" target="_parent">
-							experiences
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="#project" target="_parent">
-							project
+						<NavLink to="#projects" target="_parent">
+							Projects
 						</NavLink>
 					</li>
 				</ul>
+				<div className="w-40">
+					<Link to="/contact">contact me</Link>
+				</div>
 			</nav>
-			<div className="w-40">
-				<Link to="/contact">contact me</Link>
-			</div>
 		</header>
 	);
 }

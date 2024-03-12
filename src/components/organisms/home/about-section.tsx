@@ -1,0 +1,88 @@
+import { Fragment } from "react";
+import profileImage from "@/assets/images/profile.webp";
+import clsx from "clsx";
+import { AppearOnceView } from "@/components/atoms/presentations/appear-once-view";
+
+// const CLASSIC_GREETING = (
+// 	<Fragment>
+// 		<p>
+// 			🎓 I am currently in the final stages of my Master's degree at MISA.
+// 		</p>
+// 		<p>
+// 			🤵 I am <span className="font-semibold">self-taught</span>,{" "}
+// 			<span className="font-semibold">proactive</span> and{" "}
+// 			<span className="font-semibold">
+// 				passionate about IT and Mathematics
+// 			</span>
+// 			. Being able to use mathematics in computer science made me learn
+// 			computer science even more.
+// 		</p>
+// 		<p>
+// 			💡 I’m React Js, <span className="font-semibold">Typescript</span> and
+// 			CSS nerd. I love everything about 3D modeling, video games, and
+// 			artificial intelligence, especially about Natural Language Processing.
+// 		</p>
+// 		<p>
+// 			🏓 My hobbies are drawing, playing chess, playing video games, and
+// 			manga.
+// 		</p>
+// 	</Fragment>
+// );
+
+const MAIN_GREETING = (
+	<Fragment>
+		<p>
+			🤵 Exploring interface design and creation, when I was studying
+			mathematics in my first year, was an exceptional adventure, and I
+			haven't stopped since.💡 In parallel, I've been lucky enough to work on
+			projects where I've gained experience with{" "}
+			<span className="font-semibold">React</span>,{" "}
+			<span className="font-semibold">Node js</span>,{" "}
+			<span className="font-semibold">Python</span> and{" "}
+			<span className="font-semibold">Typescript.</span>
+		</p>
+		<p>
+			🎓 Now I'm preparing my final year intership at the LIMA Laboratory. In
+			my spare time, I work on personal project and take part in hackathons.
+		</p>
+		<p>
+			🏓 My hobbies are drawing, playing chess, playing video games, and
+			manga.
+		</p>
+	</Fragment>
+);
+
+export function AboutSection() {
+	return (
+		<div id="about" className="relative z-10 w-full pt-20 pb-12">
+			<div className="w-full relative overflow-hidden space-y-8">
+				<div className="w-full flex items-center gap-12 px-44">
+					<div className="space-y-8 pl-32 pb-8">
+						{/* <h2 className="text-4xl font-semibold">About Me.</h2> */}
+						<div className="max-w-lg space-y-6 text-xl">
+							{MAIN_GREETING}
+						</div>
+					</div>
+					<div className="px-32">
+						<AppearOnceView
+							propagation={false}
+							className={clsx(
+								"w-[300px] aspect-square rounded-full overflow-hidden relative transition-transform animate-appear border border-black",
+								"duration-700"
+							)}
+							classNameHidden="scale-0"
+						>
+							<div className="w-full h-full bg-stone-300 relative z-20">
+								<img
+									src={profileImage}
+									className="w-full h-full"
+									alt=""
+								/>
+							</div>
+						</AppearOnceView>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
