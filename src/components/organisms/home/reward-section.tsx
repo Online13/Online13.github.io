@@ -1,4 +1,5 @@
 import { AppearOnceView } from "@/components/atoms/presentations/appear-once-view";
+import clsx from "clsx";
 import { ReactNode } from "react";
 
 const REWARD_DATA = [
@@ -6,7 +7,9 @@ const REWARD_DATA = [
 		id: 1,
 		place: "1st place",
 		date: "2023",
-		name: "Orange Digital Center Champions",
+		name: (
+			<span className="text-[#f06800]">Orange Digital Center Champions</span>
+		),
 		description: (
 			<>
 				Programming competition which aims to highlight the technological
@@ -20,7 +23,11 @@ const REWARD_DATA = [
 		id: 2,
 		place: "3rd place",
 		date: "2023",
-		name: "Hackathon Clean code",
+		name: (
+			<span>
+				Hackathon <span className="text-blue-700">Clean code</span>
+			</span>
+		),
 		description:
 			"Goal : to reduce our carbon footprint by prioritizing public transports over personal vehicles, thus reducing the environmental damages.",
 	},
@@ -29,13 +36,26 @@ const REWARD_DATA = [
 type RewardItemProps = {
 	rank: string;
 	date: string;
-	compete: string;
+	className?: string;
+	titleClassName?: string;
+	compete: string | ReactNode;
 	description: string | ReactNode;
 };
 
-function RewardItem({ rank, date, description, compete }: RewardItemProps) {
+function RewardItem({
+	rank,
+	date,
+	compete,
+	className,
+	description,
+}: RewardItemProps) {
 	return (
-		<div className="space-y-2 max-w-md border border-black px-4 py-6 rounded-xl bg-white">
+		<div
+			className={clsx(
+				"space-y-2 max-w-lg border border-black px-4 py-8 rounded-xl",
+				className
+			)}
+		>
 			<div className="flex items-center gap-2">
 				<div className="pt-4 text-5xl">🥇</div>
 				<h4 className="text-xl">
@@ -44,7 +64,7 @@ function RewardItem({ rank, date, description, compete }: RewardItemProps) {
 						({date})
 					</span>
 					<br />
-					<b className="font-medium">{compete}</b>
+					<b className="font-semibold text-3xl">{compete}</b>
 					<br />
 				</h4>
 			</div>
@@ -70,6 +90,7 @@ export function RewardSection() {
 							date={reward.date}
 							rank={reward.place}
 							compete={reward.name}
+							className={reward.id === 1 ? "bg-black text-white" : "bg-white"}
 							description={reward.description}
 						/>
 					</AppearOnceView>

@@ -36,9 +36,9 @@ function HomePage() {
 			<div className="w-full border-t border-t-black"></div>
 			<ServiceSection />
 			<div className="w-full border-t border-t-black"></div>
-			<RewardSection />
-			<div className="w-full border-t border-t-black"></div>
 			<SkillSection />
+			<div className="w-full border-t border-t-black"></div>
+			<RewardSection />
 			<div className="w-full border-t border-t-black"></div>
 			<ContactSection />
 			<Footer />
