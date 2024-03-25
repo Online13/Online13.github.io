@@ -78,9 +78,9 @@ function Service(props: ServiceProps) {
 			>
 				<animated.h2
 					style={blurStyle}
-					className="text-6xl text-center font-semibold group-hover:scale-110"
+					className="text-6xl text-center font-semibold group-hover:scale-110 group-hover:underline"
 				>
-					{title}
+					{title}.
 				</animated.h2>
 				{showContentTransition(
 					(style, item) =>
@@ -101,17 +101,24 @@ function Service(props: ServiceProps) {
 export function ServiceSection() {
 	const [focus, setFocus] = useState(-1);
 	const [progress, setProgress] = useState(0);
+	function speed(val: number) {
+		if (progress >= 0.5) {
+			return 0;
+		} else {
+			return val;
+		}
+	}
 
 	return (
 		<Parallax
 			onProgressChange={(p) => setProgress(p)}
 			className="w-full bg-[whitesmoke] overflow-hidden"
 		>
-			<div className="w-full h-[300px] flex items-center">
+			<div className="w-full h-[250px] flex items-center">
 				<Service
 					id={0}
 					title="Engineering"
-					speed={progress >= 0.5 ? 0 : -10}
+					speed={speed(-10)}
 					focus={focus === 0}
 					focusOnOther={focus !== 0 && focus !== -1}
 					onClick={(id) => {
@@ -128,7 +135,7 @@ export function ServiceSection() {
 				<Service
 					id={1}
 					title="Design"
-					speed={progress >= 0.5 ? 0 : -20}
+					speed={speed(-20)}
 					focus={focus === 1}
 					focusOnOther={focus !== 1 && focus !== -1}
 					onClick={(id) => {
@@ -146,7 +153,7 @@ export function ServiceSection() {
 				<Service
 					id={2}
 					title="Modelisation"
-					speed={progress >= 0.5 ? 0 : -30}
+					speed={speed(-30)}
 					focus={focus === 2}
 					focusOnOther={focus !== 2 && focus !== -1}
 					onClick={(id) => {

@@ -27,6 +27,7 @@ export function BannerSection() {
 					},
 					{
 						translateY: [0, 50],
+						opacity: [1, 0],
 						shouldAlwaysCompleteAnimation: true,
 						expanded: false,
 						children: (

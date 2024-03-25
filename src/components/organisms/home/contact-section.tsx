@@ -6,7 +6,7 @@ export function ContactSection() {
 		<div className="relative px-44 z-10 w-full">
 			<div className="w-full pb-12 space-y-20 grid grid-cols-2">
 				<div className="space-y-10 flex flex-col justify-center">
-					<h2 className="text-5xl font-semibold">
+					<h2 className="text-6xl font-semibold">
 						Let's make something <br />
 						amazing together
 					</h2>

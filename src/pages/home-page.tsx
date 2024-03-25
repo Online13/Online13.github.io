@@ -2,12 +2,13 @@ import { AboutSection } from "src/components/organisms/home/about-section";
 import { BannerSection } from "src/components/organisms/home/banner-section";
 import { ContactSection } from "src/components/organisms/home/contact-section";
 import { RewardSection } from "@/components/organisms/home/reward-section";
-import { SkillSection } from "src/components/organisms/home/skill-section";
+import { ProjectSection } from "@/components/organisms/home/project-section";
 import Footer from "src/components/organisms/layout/Footer";
 
 import { ParallaxProvider } from "react-scroll-parallax";
 import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import { ServiceSection } from "@/components/organisms/home/service-section";
+import { ProposalSection } from "@/components/organisms/home/proposal-section";
 
 function ScrollContainer({ children }: PropsWithChildren) {
 	const [scrollEl, setScrollElement] = useState<HTMLDivElement | undefined>(
@@ -36,7 +37,9 @@ function HomePage() {
 			<div className="w-full border-t border-t-black"></div>
 			<ServiceSection />
 			<div className="w-full border-t border-t-black"></div>
-			<SkillSection />
+			<ProposalSection />
+			<div className="w-full border-t border-t-black"></div>
+			<ProjectSection />
 			<div className="w-full border-t border-t-black"></div>
 			<RewardSection />
 			<div className="w-full border-t border-t-black"></div>
