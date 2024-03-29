@@ -56,14 +56,14 @@ export function AboutSection() {
 	return (
 		<div id="about" className="relative z-10 w-full pt-20 pb-12">
 			<div className="w-full relative overflow-hidden space-y-8">
-				<div className="w-full flex items-center gap-12 px-44">
-					<div className="space-y-8 pl-32 pb-8">
+				<div className="w-full flex flex-col-reverse lg:flex-row justify-center items-center px-8 md:px-12 xl:px-24 2xl:px-72 gap-12 lg:gap-32">
+					<div className="space-y-8 pb-8">
 						{/* <h2 className="text-4xl font-semibold">About Me.</h2> */}
-						<div className="max-w-lg space-y-6 text-xl">
+						<div className="max-w-lg space-y-6 text-xl lg:text-2xl">
 							{MAIN_GREETING}
 						</div>
 					</div>
-					<div className="px-32">
+					<div className="">
 						<AppearOnceView
 							propagation={false}
 							className={clsx(

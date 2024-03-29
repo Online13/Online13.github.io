@@ -1,3 +1,4 @@
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 import { useSpring, animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
 import { ReactNode, useState } from "react";
@@ -27,30 +28,33 @@ const SHOW_CONTENT_TRANSITION = {
 };
 
 function Service(props: ServiceProps) {
+
+	const width = useWindowWidth();
+	const disabled = width < 1280;
 	const { id, title, focus, speed, description, focusOnOther, onClick } =
 		props;
 
 	const [focusStyle] = useSpring(
 		{
-			flexBasis: focus ? "70%" : "0px",
+			flexBasis: !disabled && focus ? "70%" : "0px",
 			config: {
 				duration: 300,
 			},
 		},
-		[focus]
+		[focus, disabled]
 	);
 
 	const [blurStyle] = useSpring(
 		{
 			scale: focusOnOther ? 0.5 : 1,
-			rotate: focusOnOther ? -90 : 0,
+			rotate: !disabled && focusOnOther ? -90 : 0,
 			delay: 200,
 			config: {
 				tension: 120,
 				friction: 14,
 			},
 		},
-		[focusOnOther]
+		[focusOnOther, disabled]
 	);
 
 	const showContentTransition = useTransition(focus, SHOW_CONTENT_TRANSITION);
@@ -66,6 +70,7 @@ function Service(props: ServiceProps) {
 			}}
 			className={clsx(
 				"flex-shrink flex-grow h-full relative",
+				"w-full",
 				"space-y-4 px-8 py-20 hover:bg-black hover:text-white cursor-pointer group",
 				{
 					"bg-black text-white": focus,
@@ -74,11 +79,12 @@ function Service(props: ServiceProps) {
 		>
 			<Parallax
 				speed={speed}
-				className="w-full h-full flex justify-center items-center gap-12 absolute top-0 left-0"
+				disabled={disabled}
+				className="w-full h-full flex flex-col md:flex-row justify-center items-center gap-12 xl:absolute top-0 left-0 px-12"
 			>
 				<animated.h2
 					style={blurStyle}
-					className="text-6xl text-center font-semibold group-hover:scale-110 group-hover:underline"
+					className="text-4xl md:text-5xl lg:text-6xl text-center font-semibold group-hover:scale-110 group-hover:underline"
 				>
 					{title}.
 				</animated.h2>
@@ -114,11 +120,11 @@ export function ServiceSection() {
 			onProgressChange={(p) => setProgress(p)}
 			className="w-full bg-[whitesmoke] overflow-hidden"
 		>
-			<div className="w-full h-[250px] flex items-center">
+			<div className="w-full xl:h-[250px] flex flex-col xl:flex-row items-center">
 				<Service
 					id={0}
 					title="Engineering"
-					speed={speed(-10)}
+					speed={speed(-20)}
 					focus={focus === 0}
 					focusOnOther={focus !== 0 && focus !== -1}
 					onClick={(id) => {
@@ -135,7 +141,7 @@ export function ServiceSection() {
 				<Service
 					id={1}
 					title="Design"
-					speed={speed(-20)}
+					speed={speed(-30)}
 					focus={focus === 1}
 					focusOnOther={focus !== 1 && focus !== -1}
 					onClick={(id) => {
@@ -153,7 +159,7 @@ export function ServiceSection() {
 				<Service
 					id={2}
 					title="Modelisation"
-					speed={speed(-30)}
+					speed={speed(-40)}
 					focus={focus === 2}
 					focusOnOther={focus !== 2 && focus !== -1}
 					onClick={(id) => {

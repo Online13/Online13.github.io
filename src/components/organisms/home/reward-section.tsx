@@ -1,6 +1,7 @@
-import { AppearOnceView } from "@/components/atoms/presentations/appear-once-view";
-import clsx from "clsx";
 import { ReactNode } from "react";
+import { cn } from "@/lib/shadcn/utils";
+import { AppearOnceView } from "@/components/atoms/presentations/appear-once-view";
+import { AppearText } from "@/components/atoms/presentations/appear-text";
 
 const REWARD_DATA = [
 	{
@@ -8,15 +9,17 @@ const REWARD_DATA = [
 		place: "1st place",
 		date: "2023",
 		name: (
-			<span className="text-[#f06800]">Orange Digital Center Champions</span>
+			<span className="group-hover:text-[#f06800]">
+				Orange Digital Center Champions
+			</span>
 		),
 		description: (
-			<>
+			<p className="text-lg">
 				Programming competition which aims to highlight the technological
 				talent of young developers in{" "}
 				<span className="font-medium underline">Africa & Middle East</span>{" "}
 				and to encourage team collaboration
-			</>
+			</p>
 		),
 	},
 	{
@@ -28,8 +31,13 @@ const REWARD_DATA = [
 				Hackathon <span className="text-blue-700">Clean code</span>
 			</span>
 		),
-		description:
-			"Goal : to reduce our carbon footprint by prioritizing public transports over personal vehicles, thus reducing the environmental damages.",
+		description: (
+			<p className="text-lg">
+				Goal : to reduce our carbon footprint by prioritizing public
+				transports over personal vehicles, thus reducing the environmental
+				damages.
+			</p>
+		),
 	},
 ];
 
@@ -51,8 +59,9 @@ function RewardItem({
 }: RewardItemProps) {
 	return (
 		<div
-			className={clsx(
-				"space-y-2 max-w-lg border border-black px-4 py-8 rounded-xl",
+			className={cn(
+				"transition-[background,color] duration-300 bg-white",
+				"space-y-2 max-w-lg border border-black px-4 py-8 group",
 				className
 			)}
 		>
@@ -68,16 +77,21 @@ function RewardItem({
 					<br />
 				</h4>
 			</div>
-			<p className="text-lg pl-4">{description}</p>
+			<div className="pl-4">{description}</div>
 		</div>
 	);
 }
 
 export function RewardSection() {
 	return (
-		<div className="w-full px-44 space-y-8 flex flex-col pt-10 pb-20">
-			<h2 className="text-4xl font-semibold pl-32">Some rewards</h2>
-			<div className="w-full flex items-center gap-4 pl-32">
+		<div className="w-full px-8 md:px-12 lg:px-32 xl:px-72 space-y-8 flex flex-col pb-20 bg-[whitesmoke]">
+			<div className="pt-16 pb-8 flex justify-center items-center">
+				<AppearText
+					className="text-5xl font-semibold"
+					texts={["Awards & Achievements"]}
+				/>
+			</div>
+			<div className="w-full flex flex-col xl:flex-row items-center justify-stretch gap-4">
 				{REWARD_DATA.map((reward) => (
 					<AppearOnceView
 						propagation={false}
@@ -90,7 +104,11 @@ export function RewardSection() {
 							date={reward.date}
 							rank={reward.place}
 							compete={reward.name}
-							className={reward.id === 1 ? "bg-black text-white" : "bg-white"}
+							className={
+								reward.id === 1
+									? "hover:bg-[#0E0F12] hover:text-white"
+									: ""
+							}
 							description={reward.description}
 						/>
 					</AppearOnceView>

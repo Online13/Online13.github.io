@@ -1,15 +1,26 @@
-@import "./assets/styles/font.css";
+@import "./lib/shadcn/global.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-  width: 100%;
-  height: 100%;
-  font-family: Calibre, serif;
+* {
+	font-family: "Calibre", Arial, serif;
+}
+
+*::selection {
+	background-color: black;
+	color: white;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+	margin: 0;
 }
 
 ._col-center {
-  @apply flex flex-col justify-center items-center;
+	@apply flex flex-col justify-center items-center;
 }
