@@ -4,7 +4,7 @@ function Header() {
 	return (
 		<header className="w-full flex justify-between items-center">
 			<div className="w-40">
-				<h1>R</h1>
+				
 			</div>
 			<nav className="flex items-center gap-14">
 				<ul className="flex items-center gap-x-14 text-xl font-medium">

@@ -10,6 +10,7 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import { ServiceSection } from "@/components/organisms/home/service-section";
 import { ProposalSection } from "@/components/organisms/home/proposal-section";
 import { ScrollArea } from "@/lib/shadcn/ui/scroll-area";
+import { ScrollTrigger } from "@/lib/gsap";
 
 function ScrollContainer({ children }: PropsWithChildren) {
 	const [scrollEl, setScrollElement] = useState<HTMLDivElement | undefined>(
@@ -17,6 +18,9 @@ function ScrollContainer({ children }: PropsWithChildren) {
 	);
 	const ref = useRef<HTMLDivElement | null>(null);
 	useEffect(() => {
+		ScrollTrigger.defaults({
+			scroller: ref.current,
+		});
 		setScrollElement(ref.current || undefined);
 	}, []);
 

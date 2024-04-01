@@ -3,7 +3,8 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { SQUARE_DATA_LEFT, SQUARE_DATA_RIGHT } from "src/data/square-data";
 import Header from "../layout/Header";
 import SocialNetworkLinks from "@/components/molecules/SocialNetworkLinks";
-import { AppearText } from "@/components/atoms/presentations/appear-text";
+import { AppearBox } from "@/components/atoms/presentations/appear-box";
+
 export function BannerSection() {
 	return (
 		<div className="w-full h-[530px] relative bg-[whitesmoke] flex flex-col">
@@ -35,22 +36,21 @@ export function BannerSection() {
 								<div className="px-8 md:px-12 lg:px-32 xl:px-72 space-y-4 pb-16">
 									<div className="space-y-2">
 										<div className="">
-											<AppearText
-												className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-left"
-												texts={[
-													<>Hi, I’m</>,
-													<span className="text-[#002AFF]">Rayane
-													</span>,
-													<>and</>,
-												]}
-											/>
-											<AppearText
-												className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-left"
-												texts={[
-													<span className="">I’m a</span>,
-													<span>software engineer.</span>,
-												]}
-											/>
+											<AppearBox>
+												<h1 className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-left">
+													Hi, I’m{" "}
+													<span className="text-[#002AFF]">
+														Rayane
+													</span>{" "}
+													and
+												</h1>
+											</AppearBox>
+											<AppearBox delay={0.3}>
+												<h1 className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-left">
+													<span className="">I’m a</span>
+													<span>software engineer.</span>
+												</h1>
+											</AppearBox>
 										</div>
 										<p className="max-w-xl text-left text-xl lg:text-2xl text-slate-900">
 											I find true satisfaction in crafting

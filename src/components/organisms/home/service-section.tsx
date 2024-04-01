@@ -1,7 +1,7 @@
 import { useWindowWidth } from "@/hooks/useWindowWidth";
-import { useSpring, animated, useTransition } from "@react-spring/web";
+import { gsap, useGSAP } from "@/lib/gsap";
 import clsx from "clsx";
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 
 type ServiceProps = {
@@ -14,66 +14,54 @@ type ServiceProps = {
 	onClick(id: number): void;
 };
 
-const SHOW_CONTENT_TRANSITION = {
-	from: { opacity: 0 },
-	enter: { opacity: 1 },
-	leave: { opacity: 0 },
-	exitBeforeEnter: true,
-	config: {
-		mass: 2,
-		friction: 5,
-		tension: 80,
-		duration: 700,
-	},
-};
-
 function Service(props: ServiceProps) {
-
 	const width = useWindowWidth();
 	const disabled = width < 1280;
 	const { id, title, focus, speed, description, focusOnOther, onClick } =
 		props;
 
-	const [focusStyle] = useSpring(
-		{
-			flexBasis: !disabled && focus ? "70%" : "0px",
-			config: {
-				duration: 300,
-			},
-		},
-		[focus, disabled]
-	);
+	const rootRef = useRef<HTMLDivElement | null>(null);
+	const titleRef = useRef<HTMLHeadingElement | null>(null);
+	const descriptionRef = useRef<HTMLParagraphElement | null>(null);
 
-	const [blurStyle] = useSpring(
-		{
+	useGSAP(() => {
+		gsap.to(descriptionRef.current, {
+			width: focus ? "100%" : "0px",
+			delay: 0.2
+		});
+		gsap.to(descriptionRef.current, {
+			opacity: focus ? 1 : 0,
+		});
+	}, [focus]);
+
+	useGSAP(() => {
+		gsap.to(rootRef.current, {
+			flexBasis: !disabled && focus ? "70%" : "0px",
+			duration: 0.3,
+		});
+	}, [disabled, focus]);
+
+	useGSAP(() => {
+		gsap.to(titleRef.current, {
 			scale: focusOnOther ? 0.5 : 1,
 			rotate: !disabled && focusOnOther ? -90 : 0,
-			delay: 200,
-			config: {
-				tension: 120,
-				friction: 14,
-			},
-		},
-		[focusOnOther, disabled]
-	);
+			delay: 0.2,
+		});
+	}, [disabled, focusOnOther]);
 
-	const showContentTransition = useTransition(focus, SHOW_CONTENT_TRANSITION);
 
 	return (
-		<animated.div
+		<div
+			ref={rootRef}
 			onClick={() => {
 				onClick(id);
 			}}
-			style={{
-				transition: "flex-basis 700ms,background-color 300ms,color 300ms",
-				...focusStyle,
-			}}
 			className={clsx(
-				"flex-shrink flex-grow h-full relative",
-				"w-full",
+				"xl:flex-shrink xl:flex-grow relative",
+				"w-full h-full transition-[flex-basis_700ms,background-color_300ms,color_300ms]",
 				"space-y-4 px-8 py-20 hover:bg-black hover:text-white cursor-pointer group",
 				{
-					"bg-black text-white": focus,
+					"bg-black text-white testrok": focus,
 				}
 			)}
 		>
@@ -82,25 +70,20 @@ function Service(props: ServiceProps) {
 				disabled={disabled}
 				className="w-full h-full flex flex-col md:flex-row justify-center items-center gap-12 xl:absolute top-0 left-0 px-12"
 			>
-				<animated.h2
-					style={blurStyle}
+				<h2
+					ref={titleRef}
 					className="text-4xl md:text-5xl lg:text-6xl text-center font-semibold group-hover:scale-110 group-hover:underline"
 				>
 					{title}.
-				</animated.h2>
-				{showContentTransition(
-					(style, item) =>
-						item && (
-							<animated.p
-								style={style}
-								className="max-w-[460px] max-h-[80%] overflow-hidden text-xl"
-							>
-								{description}
-							</animated.p>
-						)
-				)}
+				</h2>
+				<p
+					ref={descriptionRef}
+					className="max-w-[460px] max-h-[80%] overflow-hidden text-xl transition-all duration-500 line-clamp-4"
+				>
+					{description}
+				</p>
 			</Parallax>
-		</animated.div>
+		</div>
 	);
 }
 
@@ -120,7 +103,7 @@ export function ServiceSection() {
 			onProgressChange={(p) => setProgress(p)}
 			className="w-full bg-[whitesmoke] overflow-hidden"
 		>
-			<div className="w-full xl:h-[250px] flex flex-col xl:flex-row items-center">
+			<div className="w-full h-[calc(190px*3)] xl:h-[250px] grid grid-rows-3 xl:flex xl:flex-row xl:items-center">
 				<Service
 					id={0}
 					title="Engineering"

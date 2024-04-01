@@ -1,0 +1,186 @@
+<svg
+	data-v-0dd9719b=""
+	version="1.0"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="100%"
+	height="100%"
+	viewBox="0 0 340.000000 250.000000"
+	preserveAspectRatio="xMidYMid meet"
+	color-interpolation-filters="sRGB"
+	style="margin: auto"
+>
+	<rect
+		data-v-0dd9719b=""
+		x="0"
+		y="0"
+		width="100%"
+		height="100%"
+		fill="#ffe287"
+		fill-opacity="1"
+		class="background"
+	></rect>
+	<rect
+		data-v-0dd9719b=""
+		x="0"
+		y="0"
+		width="100%"
+		height="100%"
+		fill="url(#watermark)"
+		fill-opacity="1"
+		class="watermarklayer"
+	></rect>
+	<g
+		data-v-0dd9719b=""
+		class="iconmbgsvg"
+		transform="translate(133.25,68.9487533569336)"
+	>
+		<g fill="#333333" hollow-target="textRect">
+			<g mask="url(#6def13d8-cde9-4c37-b858-212fefd763bb)">
+				<g>
+					<rect
+						fill="#333333"
+						fill-opacity="0"
+						stroke-width="2"
+						x="0"
+						y="0"
+						width="73.5"
+						height="112.1024937085335"
+						class="image-rect"
+					></rect>
+					<svg
+						filter="url(#colors1627488673)"
+						x="0"
+						y="0"
+						width="73.5"
+						height="112.1024937085335"
+						filtersec="colorsf658671893"
+						class="image-svg-svg primary"
+						style="overflow: visible"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0.7999999999999998 0.7999999999999998 65.5 97.8"
+						>
+							<path
+								d="M9.5 44.9l-6.7-6.7L38.2 2.8l6.7 6.7L9.5 44.9zm37.3-14.1l-6.7-6.7L4.8 59.5l6.7 6.7 35.3-35.4zm17.5 5.8l-6.7-6.7-35.3 35.3 6.7 6.7 35.3-35.3zm-1.4 24.6l-6.7-6.7-35.3 35.4 6.7 6.7 35.3-35.4z"
+								fill="none"
+								stroke="#333"
+								stroke-width="4"
+								stroke-miterlimit="10"
+							></path>
+						</svg>
+					</svg>
+					<defs>
+						<filter id="colors1627488673">
+							<feColorMatrix
+								type="matrix"
+								values="0 0 0 0 0.19921875  0 0 0 0 0.19921875  0 0 0 0 0.19921875  0 0 0 1 0"
+								class="icon-fecolormatrix"
+							></feColorMatrix>
+						</filter>
+						<filter id="colorsf658671893">
+							<feColorMatrix
+								type="matrix"
+								values="0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 1 0"
+								class="icon-fecolormatrix"
+							></feColorMatrix>
+						</filter>
+						<filter id="colorsb8089945271">
+							<feColorMatrix
+								type="matrix"
+								values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"
+								class="icon-fecolormatrix"
+							></feColorMatrix>
+						</filter>
+					</defs>
+				</g>
+			</g>
+			<g transform="translate(19.065000534057617,35.121246337890625)">
+				<g data-gra="path-name" fill-rule="" class="tp-name">
+					<g transform="scale(1)">
+						<g>
+							<path
+								d="M13.78 0L3.31 0 3.31-41.86 24.25-41.86Q31.66-41.86 35.16-37.96 38.68-34.06 38.68-27.5L38.68-27.5Q38.68-23.27 36.53-20.09 34.38-16.9 30.68-15.34L30.68-15.34Q31.59-14.63 32.14-13.75 32.7-12.87 33.34-11.31L33.34-11.31 38.29 0 27.37 0 22.69-10.66Q22.1-12.03 21.19-12.64 20.28-13.26 18.59-13.26L18.59-13.26 13.78-13.26 13.78 0ZM13.78-33.8L13.78-21.32 21.52-21.32Q24.57-21.32 26.29-22.85 28.02-24.38 28.02-27.5L28.02-27.5Q28.02-33.8 21.97-33.8L21.97-33.8 13.78-33.8Z"
+								transform="translate(-3.309999942779541, 41.86000061035156)"
+							></path>
+						</g>
+						<!---->
+						<!---->
+						<!---->
+						<!---->
+						<!---->
+						<!---->
+						<!---->
+					</g>
+				</g>
+				<!---->
+			</g>
+		</g>
+	</g>
+	<defs v-gra="od"></defs>
+	<mask id="6def13d8-cde9-4c37-b858-212fefd763bb">
+		<g fill="white">
+			<g>
+				<rect
+					fill-opacity="1"
+					stroke-width="2"
+					x="0"
+					y="0"
+					width="73.5"
+					height="112.1024937085335"
+					class="image-rect"
+				></rect>
+				<svg
+					x="0"
+					y="0"
+					width="73.5"
+					height="112.1024937085335"
+					class="image-svg-svg primary"
+					style="overflow: visible"
+					filter="url(#colorsf658671893)"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0.7999999999999998 0.7999999999999998 65.5 97.8"
+					>
+						<path
+							d="M9.5 44.9l-6.7-6.7L38.2 2.8l6.7 6.7L9.5 44.9zm37.3-14.1l-6.7-6.7L4.8 59.5l6.7 6.7 35.3-35.4zm17.5 5.8l-6.7-6.7-35.3 35.3 6.7 6.7 35.3-35.3zm-1.4 24.6l-6.7-6.7-35.3 35.4 6.7 6.7 35.3-35.4z"
+							fill="none"
+							stroke="#333"
+							stroke-width="4"
+							stroke-miterlimit="10"
+						></path>
+					</svg>
+				</svg>
+				<defs></defs>
+			</g>
+		</g>
+		<g transform="translate(19.065000534057617,35.121246337890625)">
+			<rect
+				fill="black"
+				fill-opacity="1"
+				x="-3.5"
+				y="-3.5"
+				width="42.369998931884766"
+				height="48.86000061035156"
+			></rect>
+			<rect fill="black" fill-opacity="1" x="-3.5" y="-3.5"></rect>
+		</g>
+		<g
+			transform="translate(19.065000534057617,35.121246337890625)"
+			fill="black"
+		>
+			<g data-gra="path-name" fill-rule="" class="tp-name">
+				<g transform="scale(1)">
+					<g>
+						<path
+							d="M13.78 0L3.31 0 3.31-41.86 24.25-41.86Q31.66-41.86 35.16-37.96 38.68-34.06 38.68-27.5L38.68-27.5Q38.68-23.27 36.53-20.09 34.38-16.9 30.68-15.34L30.68-15.34Q31.59-14.63 32.14-13.75 32.7-12.87 33.34-11.31L33.34-11.31 38.29 0 27.37 0 22.69-10.66Q22.1-12.03 21.19-12.64 20.28-13.26 18.59-13.26L18.59-13.26 13.78-13.26 13.78 0ZM13.78-33.8L13.78-21.32 21.52-21.32Q24.57-21.32 26.29-22.85 28.02-24.38 28.02-27.5L28.02-27.5Q28.02-33.8 21.97-33.8L21.97-33.8 13.78-33.8Z"
+							transform="translate(-3.309999942779541, 41.86000061035156)"
+						></path>
+					</g>
+				</g>
+			</g>
+		</g>
+	</mask>
+</svg>

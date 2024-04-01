@@ -1,5 +1,5 @@
-// import Lottie from "lottie-react";
-// import anim from "src/assets/animations/ui.json";
+
+import { OutlineText } from "@/components/atoms/typography/outline-text";
 
 function Illustration() {
 	return (
@@ -47,7 +47,12 @@ function Illustration() {
 
 export function ProposalSection() {
 	return (
-		<div className="py-8 flex flex-col-reverse lg:flex-row items-center px-8 md:px-12 lg:px-32 xl:px-72">
+		<div className="relative py-8 flex flex-col-reverse lg:flex-row items-center px-8 md:px-12 lg:px-32 xl:px-72">
+			<div className="hidden lg:block absolute top-20 left-12">
+				<OutlineText className="origin-top-right -rotate-90 -translate-x-full">
+					Skills.
+				</OutlineText>
+			</div>
 			<p className="max-w-xl text-xl lg:text-2xl pl-4 py-2 border-l-[6px] border-l-transparent">
 				Working for governments and startups, I've built helpful apps and
 				websites for phones and computers. Every project taught me new ways

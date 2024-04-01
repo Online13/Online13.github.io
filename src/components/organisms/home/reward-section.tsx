@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/shadcn/utils";
 import { AppearOnceView } from "@/components/atoms/presentations/appear-once-view";
-import { AppearText } from "@/components/atoms/presentations/appear-text";
+import { OutlineText } from "@/components/atoms/typography/outline-text";
 
 const REWARD_DATA = [
 	{
@@ -61,7 +61,7 @@ function RewardItem({
 		<div
 			className={cn(
 				"transition-[background,color] duration-300 bg-white",
-				"space-y-2 max-w-lg border border-black px-4 py-8 group",
+				"space-y-2 max-w-xl border border-black pl-4 pr-6 py-8 group",
 				className
 			)}
 		>
@@ -73,7 +73,9 @@ function RewardItem({
 						({date})
 					</span>
 					<br />
-					<b className="font-semibold text-3xl">{compete}</b>
+					<b className="font-semibold text-3xl whitespace-nowrap">
+						{compete}
+					</b>
 					<br />
 				</h4>
 			</div>
@@ -84,13 +86,20 @@ function RewardItem({
 
 export function RewardSection() {
 	return (
-		<div className="w-full px-8 md:px-12 lg:px-32 xl:px-72 space-y-8 flex flex-col pb-20 bg-[whitesmoke]">
-			<div className="pt-16 pb-8 flex justify-center items-center">
-				<AppearText
-					className="text-5xl font-semibold"
-					texts={["Awards & Achievements"]}
-				/>
+		<div className="relative w-full px-8 md:px-12 lg:px-32 xl:px-72 lex flex-col py-20 bg-[whitesmoke]">
+			<div className="absolute top-20 left-12">
+				<OutlineText className="origin-top-right -rotate-90 -translate-x-full">
+					Awards.
+				</OutlineText>
 			</div>
+			<p className="max-w-lg text-2xl pb-12">
+				These experiences have not only deepened my{" "}
+				<b className="font-semibold">
+					understanding of my own capabilities
+				</b>{" "}
+				but also emphasized the importance of{" "}
+				<b className="font-semibold">teamwork</b> in achieving success.
+			</p>
 			<div className="w-full flex flex-col xl:flex-row items-center justify-stretch gap-4">
 				{REWARD_DATA.map((reward) => (
 					<AppearOnceView
