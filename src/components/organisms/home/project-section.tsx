@@ -11,10 +11,11 @@ function ProjectPreview({ title }: ProjectPreviewProps) {
 		<div className="">
 			<div
 				className={clsx(
-					"w-full aspect-video border border-black z-20",
-					{}
+					"w-full aspect-video border border-black z-20 flex justify-center items-center"
 				)}
-			></div>
+			>
+				<span className="text-2xl text-slate-500">comming soon...</span>
+			</div>
 			<div className="w-full pt-8 pb-12 px-4 z-30 space-y-2 flex items-start justify-between">
 				<div className="space-y-4">
 					<h2 className="text-3xl font-semibold">{title}</h2>
