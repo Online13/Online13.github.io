@@ -7,6 +7,7 @@ function Illustration() {
 			xmlns="http://www.w3.org/2000/svg"
 			width="400"
 			height="400"
+			className="relative z-10"
 			viewBox="0 0 400 400"
 		>
 			<path
@@ -48,11 +49,6 @@ function Illustration() {
 export function ProposalSection() {
 	return (
 		<div className="relative py-8 flex flex-col-reverse lg:flex-row items-center px-8 md:px-12 lg:px-32 xl:px-72">
-			<div className="hidden lg:block absolute top-20 left-12">
-				<OutlineText className="origin-top-right -rotate-90 -translate-x-full">
-					Skills.
-				</OutlineText>
-			</div>
 			<p className="max-w-xl text-xl lg:text-2xl pl-4 py-2 border-l-[6px] border-l-transparent">
 				Working for governments and startups, I've built helpful apps and
 				websites for phones and computers. Every project taught me new ways
@@ -61,9 +57,13 @@ export function ProposalSection() {
 				problems and help people. That's why I keep learning new skills to
 				build even better tools!
 			</p>
-			<div className="w-full px-12 flex justify-center items-center">
+			<div className="px-12 flex justify-center items-center relative">
+				<div className="hidden lg:block absolute top-0 left-[400px] z-0">
+					<OutlineText className="opacity-40">
+						Skills.
+					</OutlineText>
+				</div>
 				<Illustration />
-				{/* <Lottie animationData={anim}  /> */}
 			</div>
 		</div>
 	);

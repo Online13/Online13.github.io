@@ -37,7 +37,7 @@ export function BannerSection() {
 									<div className="space-y-2">
 										<div className="">
 											<AppearBox>
-												<h1 className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-left">
+												<h1 className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-7xl font-semibold text-left">
 													Hi, I’m{" "}
 													<span className="text-[#002AFF]">
 														Rayane
@@ -46,7 +46,7 @@ export function BannerSection() {
 												</h1>
 											</AppearBox>
 											<AppearBox delay={0.3}>
-												<h1 className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-left">
+												<h1 className="space-x-2 md:space-x-4 text-4xl md:text-5xl lg:text-7xl font-semibold text-left">
 													<span className="">I’m a</span>
 													<span>software engineer.</span>
 												</h1>

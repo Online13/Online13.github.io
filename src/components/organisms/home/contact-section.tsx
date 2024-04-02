@@ -1,5 +1,4 @@
 import { AppearBox } from "@/components/atoms/presentations/appear-box";
-import { OutlineText } from "@/components/atoms/typography/outline-text";
 import clsx from "clsx";
 import { useRef } from "react";
 
@@ -10,11 +9,6 @@ export function ContactSection() {
 
 	return (
 		<div className="relative px-8 md:px-12 lg:px-24 xl:px-32 2xl:px-60 z-10 w-full">
-			<div className="hidden lg:block absolute top-20 left-12">
-				<OutlineText className="origin-top-right -rotate-90 -translate-x-full">
-					Contact.
-				</OutlineText>
-			</div>
 			<div className="w-full pb-12 xl:space-y-20 pt-24 xl:pt-0 grid grid-cols-1 xl:grid-cols-2 xl:gap-12">
 				<div className="w-full flex flex-col justify-center gap-4">
 					<div className="w-full flex flex-col">

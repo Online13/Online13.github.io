@@ -87,19 +87,17 @@ function RewardItem({
 export function RewardSection() {
 	return (
 		<div className="relative w-full px-8 md:px-12 lg:px-32 xl:px-72 lex flex-col py-20 bg-[whitesmoke]">
-			<div className="absolute top-20 left-12">
-				<OutlineText className="origin-top-right -rotate-90 -translate-x-full">
-					Awards.
-				</OutlineText>
+			<div className="w-full flex items-center justify-between">
+				<OutlineText className="opacity-40">Awards.</OutlineText>
+				<p className="max-w-lg text-2xl pb-12">
+					These experiences have not only deepened my{" "}
+					<b className="font-semibold">
+						understanding of my own capabilities
+					</b>{" "}
+					but also emphasized the importance of{" "}
+					<b className="font-semibold">teamwork</b> in achieving success.
+				</p>
 			</div>
-			<p className="max-w-lg text-2xl pb-12">
-				These experiences have not only deepened my{" "}
-				<b className="font-semibold">
-					understanding of my own capabilities
-				</b>{" "}
-				but also emphasized the importance of{" "}
-				<b className="font-semibold">teamwork</b> in achieving success.
-			</p>
 			<div className="w-full flex flex-col xl:flex-row items-center justify-stretch gap-4">
 				{REWARD_DATA.map((reward) => (
 					<AppearOnceView

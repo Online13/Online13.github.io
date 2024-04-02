@@ -56,18 +56,18 @@ const MAIN_GREETING = (
 export function AboutSection() {
 	return (
 		<div id="about" className="relative z-10 w-full pt-20 pb-12">
-			<div className="hidden lg:block absolute top-20 left-12">
-				<OutlineText className="origin-top-right -rotate-90 -translate-x-full">
-					About.
-				</OutlineText>
-			</div>
 			<div className="w-full flex flex-col-reverse lg:flex-row justify-start items-center px-8 md:px-12 xl:px-24 2xl:px-72 gap-12 lg:gap-32">
 				<div className="space-y-8 pb-8">
 					<div className="max-w-lg space-y-6 text-xl lg:text-2xl">
 						{MAIN_GREETING}
 					</div>
 				</div>
-				<div className="">
+				<div className="relative">
+					<div className="hidden lg:block absolute -top-20 left-48">
+						<OutlineText className="opacity-40">
+							About.
+						</OutlineText>
+					</div>
 					<AppearOnceView
 						propagation={false}
 						className={clsx(
