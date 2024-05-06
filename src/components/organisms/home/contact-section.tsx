@@ -1,4 +1,3 @@
-import { AppearBox } from "@/components/atoms/presentations/appear-box";
 import clsx from "clsx";
 import { useRef } from "react";
 
@@ -12,12 +11,9 @@ export function ContactSection() {
 			<div className="w-full pb-12 xl:space-y-20 pt-24 xl:pt-0 grid grid-cols-1 xl:grid-cols-2 xl:gap-12">
 				<div className="w-full flex flex-col justify-center gap-4">
 					<div className="w-full flex flex-col">
-						<h2 className="text-6xl font-semibold whitespace-nowrap">
-							<AppearBox>Let's make something</AppearBox>
-							<AppearBox>
-								amazing <span className="text-[#002AFF]">together</span>
-								.
-							</AppearBox>
+						<h2 className="text-6xl font-semibold">
+							Let's make something amazing{" "}
+							<span className="text-[#002AFF]">together</span>.
 						</h2>
 					</div>
 					<p className="text-2xl max-w-md">

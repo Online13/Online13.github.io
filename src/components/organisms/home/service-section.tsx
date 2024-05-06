@@ -27,7 +27,7 @@ function Service(props: ServiceProps) {
 	useGSAP(() => {
 		gsap.to(descriptionRef.current, {
 			width: focus ? "100%" : "0px",
-			delay: 0.2
+			delay: 0.2,
 		});
 		gsap.to(descriptionRef.current, {
 			opacity: focus ? 1 : 0,
@@ -48,7 +48,6 @@ function Service(props: ServiceProps) {
 			delay: 0.2,
 		});
 	}, [disabled, focusOnOther]);
-
 
 	return (
 		<div

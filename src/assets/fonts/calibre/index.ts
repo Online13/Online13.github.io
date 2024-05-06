@@ -14,7 +14,7 @@ import CalibreSemibold from "./CalibreSemibold.otf";
 import CalibreThinItalic from "./CalibreThinItalic.otf";
 import CalibreThin from "./CalibreThin.otf";
 
-export const fonts: FontData[] = [
+export const calibreFont: FontData[] = [
 	{
 		name: "Calibre",
 		path: CalibreRegular,

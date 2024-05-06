@@ -31,28 +31,32 @@ function ProjectPreview({ title }: ProjectPreviewProps) {
 export function ProjectSection() {
 	return (
 		<div
-			className="relative z-10 w-full bg-white px-8 md:px-12 lg:px-32 xl:px-72 pb-20 pt-12 lg:pt-24"
+			className="relative z-10 w-full bg-white flex flex-col items-center py-24 px-8 md:px-12 xl:px-24 2xl:px-72"
 			id="projects"
 		>
-			<div className="block lg:hidden pb-8">
-				<AppearBox className="text-5xl font-semibold">
-					Projects & Case study
-				</AppearBox>
-			</div>
-			<div className="w-full">
-				{/* filtering */}
-				<div className="pt-8 grid grid-cols-1 md:grid-cols-2 md:gap-12">
-					<div className="">
-						<ProjectPreview title="Chester App" />
-						<ProjectPreview title="Peasy" />
-					</div>
-					<div className="md:pt-24 relative">
-						<div className="hidden lg:block absolute -top-14 left-0 h-2/3">
-							<OutlineText className="opacity-40">Projects.</OutlineText>
+			<div className="w-full max-w-[1400px]">
+				<div className="block lg:hidden pb-8">
+					<AppearBox className="text-5xl font-semibold">
+						Projects & Case study
+					</AppearBox>
+				</div>
+				<div className="w-full">
+					{/* filtering */}
+					<div className="pt-8 grid grid-cols-1 md:grid-cols-2 md:gap-12">
+						<div className="">
+							<ProjectPreview title="Chester App" />
+							<ProjectPreview title="Peasy" />
 						</div>
-						<ProjectPreview title="Redax App" />
-						<div className="active:scale-95 transition-transform duration-200 ease-out cursor-pointer aspect-video border border-black flex justify-center items-center">
-							<span className="text-3xl">See more work</span>
+						<div className="md:pt-24 relative">
+							<div className="hidden lg:block absolute -top-14 left-0 h-2/3">
+								<OutlineText className="opacity-40">
+									Projects.
+								</OutlineText>
+							</div>
+							<ProjectPreview title="Redax App" />
+							<div className="active:scale-95 transition-transform duration-200 ease-out cursor-pointer aspect-video border border-black flex justify-center items-center">
+								<span className="text-3xl">See more work</span>
+							</div>
 						</div>
 					</div>
 				</div>

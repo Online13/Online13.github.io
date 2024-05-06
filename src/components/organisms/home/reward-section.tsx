@@ -61,7 +61,7 @@ function RewardItem({
 		<div
 			className={cn(
 				"transition-[background,color] duration-300 bg-white",
-				"space-y-2 max-w-xl border border-black pl-4 pr-6 py-8 group",
+				"space-y-2 border border-black pl-4 pr-6 py-8 group",
 				className
 			)}
 		>
@@ -87,8 +87,8 @@ function RewardItem({
 export function RewardSection() {
 	return (
 		<div className="relative w-full px-8 md:px-12 lg:px-32 xl:px-72 lex flex-col py-20 bg-[whitesmoke]">
-			<div className="w-full flex items-center justify-between">
-				<OutlineText className="opacity-40">Awards.</OutlineText>
+			<div className="w-full flex items-center gap-x-24">
+				<OutlineText>Awards.</OutlineText>
 				<p className="max-w-lg text-2xl pb-12">
 					These experiences have not only deepened my{" "}
 					<b className="font-semibold">
@@ -98,7 +98,7 @@ export function RewardSection() {
 					<b className="font-semibold">teamwork</b> in achieving success.
 				</p>
 			</div>
-			<div className="w-full flex flex-col xl:flex-row items-center justify-stretch gap-4">
+			<div className="w-full grid grid-cols-2 gap-4">
 				{REWARD_DATA.map((reward) => (
 					<AppearOnceView
 						propagation={false}

@@ -1,7 +1,6 @@
 import { AboutSection } from "src/components/organisms/home/about-section";
 import { BannerSection } from "src/components/organisms/home/banner-section";
 import { ContactSection } from "src/components/organisms/home/contact-section";
-import { RewardSection } from "@/components/organisms/home/reward-section";
 import { ProjectSection } from "@/components/organisms/home/project-section";
 import Footer from "src/components/organisms/layout/Footer";
 
@@ -45,8 +44,6 @@ function HomePage() {
 			<ProposalSection />
 			<div className="w-full border-t border-t-black"></div>
 			<ProjectSection />
-			<div className="w-full border-t border-t-black"></div>
-			<RewardSection />
 			<div className="w-full border-t border-t-black"></div>
 			<ContactSection />
 			<Footer />

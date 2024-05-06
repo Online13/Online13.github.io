@@ -1,4 +1,3 @@
-
 import { OutlineText } from "@/components/atoms/typography/outline-text";
 
 function Illustration() {
@@ -48,22 +47,24 @@ function Illustration() {
 
 export function ProposalSection() {
 	return (
-		<div className="relative py-8 flex flex-col-reverse lg:flex-row items-center px-8 md:px-12 lg:px-32 xl:px-72">
-			<p className="max-w-xl text-xl lg:text-2xl pl-4 py-2 border-l-[6px] border-l-transparent">
-				Working for governments and startups, I've built helpful apps and
-				websites for phones and computers. Every project taught me new ways
-				to make them super user-friendly and easy to navigate ! Now I can do
-				both mobile apps and websites! Tech is my passion - it lets me solve
-				problems and help people. That's why I keep learning new skills to
-				build even better tools!
-			</p>
-			<div className="px-12 flex justify-center items-center relative">
-				<div className="hidden lg:block absolute top-0 left-[400px] z-0">
-					<OutlineText className="opacity-40">
-						Skills.
-					</OutlineText>
+		<div className="w-full flex flex-col items-center px-8 md:px-12 xl:px-24 2xl:px-72">
+			<div className="w-full max-w-[1400px]">
+				<div className="relative py-14 flex flex-col-reverse lg:flex-row items-center">
+					<p className="max-w-xl text-xl lg:text-2xl pl-4 py-2 border-l-[6px] border-l-transparent">
+						Working for startups and governments, I've built helpful apps
+						and websites for phones and computers. Every project taught me
+						new ways to make them super user-friendly and easy to navigate
+						! Now I can do both mobile apps and websites! Tech is my
+						passion - it lets me solve problems and help people. That's
+						why I keep learning new skills to build even better tools!
+					</p>
+					<div className="px-12 flex justify-center items-center relative">
+						<div className="hidden lg:block absolute top-0 left-[400px] z-0">
+							<OutlineText>Skills.</OutlineText>
+						</div>
+						<Illustration />
+					</div>
 				</div>
-				<Illustration />
 			</div>
 		</div>
 	);

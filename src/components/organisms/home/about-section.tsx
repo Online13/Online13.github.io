@@ -55,31 +55,38 @@ const MAIN_GREETING = (
 
 export function AboutSection() {
 	return (
-		<div id="about" className="relative z-10 w-full pt-20 pb-12">
-			<div className="w-full flex flex-col-reverse lg:flex-row justify-start items-center px-8 md:px-12 xl:px-24 2xl:px-72 gap-12 lg:gap-32">
-				<div className="space-y-8 pb-8">
-					<div className="max-w-lg space-y-6 text-xl lg:text-2xl">
-						{MAIN_GREETING}
-					</div>
-				</div>
-				<div className="relative">
-					<div className="hidden lg:block absolute -top-20 left-48">
-						<OutlineText className="opacity-40">
-							About.
-						</OutlineText>
-					</div>
-					<AppearOnceView
-						propagation={false}
-						className={clsx(
-							"w-[300px] aspect-square rounded-full overflow-hidden relative transition-transform animate-appear border border-black",
-							"duration-700"
-						)}
-						classNameHidden="scale-0"
-					>
-						<div className="w-full h-full bg-stone-300 relative z-20">
-							<img src={profileImage} className="w-full h-full" alt="" />
+		<div
+			id="about"
+			className="relative z-10 w-full flex flex-col items-center pt-20 pb-12 px-8 md:px-12 xl:px-24 2xl:px-72"
+		>
+			<div className="w-full max-w-[1400px]">
+				<div className="w-full flex flex-col-reverse lg:flex-row justify-start items-center gap-12 lg:gap-32">
+					<div className="space-y-8 pb-8">
+						<div className="max-w-lg space-y-6 text-xl lg:text-2xl">
+							{MAIN_GREETING}
 						</div>
-					</AppearOnceView>
+					</div>
+					<div className="relative">
+						<div className="hidden lg:block absolute -top-20 left-48">
+							<OutlineText>About.</OutlineText>
+						</div>
+						<AppearOnceView
+							propagation={false}
+							className={clsx(
+								"w-[300px] aspect-square rounded-full overflow-hidden relative transition-transform animate-appear border border-black",
+								"duration-700"
+							)}
+							classNameHidden="scale-0"
+						>
+							<div className="w-full h-full bg-stone-300 relative z-20">
+								<img
+									src={profileImage}
+									className="w-full h-full"
+									alt=""
+								/>
+							</div>
+						</AppearOnceView>
+					</div>
 				</div>
 			</div>
 		</div>
