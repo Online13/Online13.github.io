@@ -1,4 +1,3 @@
-import { FontData } from "@/hooks/useFont";
 import CalibreBlackItalic from "./CalibreBlackItalic.otf";
 import CalibreBlack from "./CalibreBlack.otf";
 import CalibreBoldItalic from "./CalibreBoldItalic.otf";
@@ -13,6 +12,7 @@ import CalibreSemiboldItalic from "./CalibreSemiboldItalic.otf";
 import CalibreSemibold from "./CalibreSemibold.otf";
 import CalibreThinItalic from "./CalibreThinItalic.otf";
 import CalibreThin from "./CalibreThin.otf";
+import { FontData } from "@/type";
 
 export const calibreFont: FontData[] = [
 	{

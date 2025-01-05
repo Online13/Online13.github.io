@@ -7,39 +7,42 @@ import {
 	WhatsAppIcon,
 } from "@/components/atoms/icons";
 
+function SocialLink({
+	to,
+	children,
+}: {
+	to: string;
+	children: React.ReactNode;
+}) {
+	return (
+		<Link
+			to={to}
+			target="_blank"
+			className="w-full flex justify-center items-center rounded-lg hover:bg-stone-500/20 hover:scale-125 hover:rotate-12 transition-transform duration-200 py-2 px-2"
+		>
+			{children}
+		</Link>
+	);
+}
+
 function SocialNetworkLinks() {
 	return (
 		<div className="w-full flex justify-between items-center gap-2">
-			<Link
-				className="w-full flex justify-center items-center rounded-lg hover:bg-slate-300 py-2 px-2"
-				to="mailto:rratiarivelo@gmail.com"
-			>
+			<SocialLink to="mailto:rratiarivelo@gmail.com">
 				<EmailIcon />
-			</Link>
-			<Link
-				className="w-full flex justify-center items-center rounded-lg hover:bg-slate-300 py-2 px-2"
-				to="https://github.com/Online13/"
-			>
+			</SocialLink>
+			<SocialLink to="https://github.com/Online13/">
 				<GithubIcon />
-			</Link>
-			<Link
-				className="w-full flex justify-center items-center rounded-lg hover:bg-slate-300 py-2 px-2"
-				to="https://www.linkedin.com/in/nekena-rayane-ratiarivelo-2115751b9/"
-			>
+			</SocialLink>
+			<SocialLink to="https://www.linkedin.com/in/nekena-rayane-ratiarivelo-2115751b9/">
 				<LinkedinIcon />
-			</Link>
-			<Link
-				className="w-full flex justify-center items-center rounded-lg hover:bg-slate-300 py-2 px-2"
-				to="https://wa.me/261341313373"
-			>
+			</SocialLink>
+			<SocialLink to="https://wa.me/261341313373">
 				<WhatsAppIcon />
-			</Link>
-			<Link
-				className="w-full flex justify-center items-center rounded-lg hover:bg-slate-300 py-2 px-2"
-				to="https://web.facebook.com/Online.Nk13/"
-			>
+			</SocialLink>
+			<SocialLink to="https://web.facebook.com/Online.Nk13/">
 				<FacebookIcon />
-			</Link>
+			</SocialLink>
 		</div>
 	);
 }

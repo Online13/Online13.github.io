@@ -1,35 +1,21 @@
-import { Store } from "@/type";
 import { useSyncExternalStore } from "react";
 
-class WindowWidthStore implements Store<number> {
-	private onResize: () => void;
+let onResize = () => {};
 
-	constructor() {
-		this.onResize = () => {};
-		this.subscribe = this.subscribe.bind(this);
-		this.unsubscribe = this.unsubscribe.bind(this);
-	}
-
-	unsubscribe(): void {
-		window.removeEventListener("resize", this.onResize);
-	}
-
-	subscribe(onStoreChange: () => void): () => void {
-		this.onResize = onStoreChange;
-		window.addEventListener("resize", this.onResize);
-		return this.unsubscribe;
-	}
-
-	getSnapshot() {
-		return window.innerWidth;
-	}
+function unsubscribe(): void {
+	window.removeEventListener("resize", onResize);
 }
 
-const windowSizeStore = new WindowWidthStore();
+function subscribe(onStoreChange: () => void): () => void {
+	onResize = onStoreChange;
+	window.addEventListener("resize", onResize);
+	return unsubscribe;
+}
+
+function getSnapshot() {
+	return window.innerWidth;
+}
 
 export function useWindowWidth() {
-	return useSyncExternalStore(
-		windowSizeStore.subscribe,
-		windowSizeStore.getSnapshot
-	);
+	return useSyncExternalStore(subscribe, getSnapshot);
 }

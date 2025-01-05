@@ -6,11 +6,12 @@ import { SplashScreen } from "./components/molecules/SplashScreen";
 import { loraFont } from "./assets/fonts/lora";
 
 const router = createBrowserRouter(routes);
-function App() {
-	const isLoadingLoraFont = useFont(loraFont);
-	const isLoadingCalibreFont = useFont(calibreFont);
+const fonts = [...loraFont, ...calibreFont];
 
-	if (isLoadingCalibreFont && isLoadingLoraFont) {
+function App() {
+	const isLoadingFont = useFont(fonts);
+
+	if (isLoadingFont) {
 		return <SplashScreen />;
 	}
 

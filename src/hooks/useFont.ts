@@ -1,35 +1,23 @@
-import { Store } from "@/type";
+import { FontData } from "@/type";
 import { wait } from "@/utils/async";
-import { useMemo, useSyncExternalStore } from "react";
+import { useRef, useSyncExternalStore } from "react";
 
-export type FontData = {
-	name: string;
-	path: string;
-	options: FontFaceDescriptors;
-};
-
-class FontStore implements Store<FontFaceSetLoadStatus> {
-	private fonts: FontFace[];
-	constructor(fonts: FontData[]) {
-		this.fonts = fonts.map((font) => {
-			return new FontFace(font.name, `url(${font.path})`, font.options);
-		});
-		this.subscribe = this.subscribe.bind(this);
-		this.unsubscribe = this.unsubscribe.bind(this);
-
-		for (const font of this.fonts) {
-			document.fonts.add(font);
-			font.load();
-		}
+function createFontStore(_fonts: FontData[]) {
+	const fonts = _fonts.map((font) => {
+		return new FontFace(font.name, `url(${font.path})`, font.options);
+	});
+	for (const font of fonts) {
+		document.fonts.add(font);
+		font.load();
 	}
 
-	unsubscribe() {
-		this.fonts.forEach((font) => {
+	const unsubscribe = () => {
+		fonts.forEach((font) => {
 			document.fonts.delete(font);
 		});
-	}
+	};
 
-	subscribe(onStoreChange: () => void) {
+	const subscribe = (onStoreChange: () => void) => {
 		document.fonts.onloadingerror = () => {
 			console.log("Font loading error...");
 		};
@@ -38,19 +26,31 @@ class FontStore implements Store<FontFaceSetLoadStatus> {
 			onStoreChange();
 		});
 
-		return this.unsubscribe;
-	}
+		return unsubscribe;
+	};
 
-	getSnapshot() {
+	const getSnapshot = () => {
 		return document.fonts.status;
-	}
+	};
+
+	return {
+		unsubscribe,
+		subscribe,
+		getSnapshot,
+	};
 }
 
+type FontStore = ReturnType<typeof createFontStore>;
+
 export function useFont(fonts: FontData[]) {
-	const fontStore = useMemo(() => new FontStore(fonts), [fonts]);
+	const fontStore = useRef<FontStore | null>(null);
+	if (fontStore.current === null) {
+		fontStore.current = createFontStore(fonts);
+	}
+
 	const status = useSyncExternalStore(
-		fontStore.subscribe,
-		fontStore.getSnapshot
+		fontStore.current.subscribe,
+		fontStore.current.getSnapshot
 	);
 	const isLoading = status === "loading";
 
