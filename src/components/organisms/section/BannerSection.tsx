@@ -1,32 +1,50 @@
+import clsx from "clsx";
 import SocialNetworkLinks from "@/components/molecules/SocialNetworkLinks";
-import WordReveal from "@/components/ui/word-reveal";
+import profileImage from "@/assets/images/profile.webp";
 
-export function BannerSection() {
+interface Props {
+	className?: string;
+}
+
+export function BannerSection({ className }: Props) {
 	return (
-		<div className="w-full py-20 flex flex-col justify-center items-center border-y border-border relative">
+		<div
+			className={clsx(
+				"w-full py-20 flex flex-col justify-center items-center border-y border-border relative",
+				className
+			)}
+		>
 			<div className="inset-0 flex flex-col justify-center space-y-14 w-full container">
 				<div className="space-y-4">
 					<div className="grid gap-2">
-						<div className="font-semibold text-md lg:text-lg">
-							<div className="flex items-center">
-								<WordReveal
-									text="Hi, I'm "
-									className="font-semibold text-2xl lg:text-3xl"
-								/>
-								<WordReveal
-									text="Rayane"
-									className="text-[#002AFF] font-semibold text-2xl lg:text-3xl"
-								/>
-								<WordReveal
-									text=" and"
-									className="font-semibold text-2xl lg:text-3xl"
-								/>
+						<div className="flex items-center gap-6">
+							<div
+								className={clsx(
+									"w-[100px] aspect-square rounded-full overflow-hidden transition-transform animate-appear border border-black",
+									"duration-700",
+								)}
+							>
+								<div className="w-full h-full bg-stone-300 relative z-20">
+									<img
+										src={profileImage}
+										className="w-full h-full"
+										alt=""
+									/>
+								</div>
 							</div>
-							<div className="relative -top-[2px]">
-								<WordReveal
-									text="I'm a software engineer."
-									className="font-semibold text-2xl lg:text-3xl"
-								/>
+							<div className="text-2xl lg:text-3xl font-semibold">
+								<div>
+									<h1 className="space-x-2 md:space-x-4 text-left">
+										Hi, I’m{" "}
+										<span className="text-[#002AFF]">Rayane</span> and
+									</h1>
+								</div>
+								<div>
+									<h1 className="space-x-2 text-left">
+										<span className="">I’m a</span>
+										<span className="">software engineer.</span>
+									</h1>
+								</div>
 							</div>
 						</div>
 						<p className="max-w-xl text-left text-base text-slate-900">

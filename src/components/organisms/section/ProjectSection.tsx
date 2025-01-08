@@ -1,12 +1,20 @@
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
 
-export function ProjectSection() {
+interface Props {
+	className?: string;
+}
+
+export function ProjectSection({ className }: Props) {
 	return (
 		<div
-			className="relative z-10 w-full border-b border-border py-10"
+			className={clsx(
+				"relative z-10 w-full border-b border-border py-10",
+				className
+			)}
 			id="projects"
 		>
+			{/* <FocusView /> */}
 			<div className="container">
 				<h2 className="text-lg lg:text-xl font-semibold">Projects</h2>
 				<div className="w-full">

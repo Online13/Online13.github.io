@@ -10,7 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 function HomePage() {
 	return (
-		<div className="w-full h-full overflow-hidden">
+		<div id="home" className="w-full h-full overflow-hidden">
 			<ScrollArea className="w-full h-full">
 				<Header />
 				<div className="w-full">

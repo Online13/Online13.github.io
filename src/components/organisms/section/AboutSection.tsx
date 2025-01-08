@@ -1,24 +1,19 @@
-import profileImage from "@/assets/images/profile.webp";
 import clsx from "clsx";
 
-export function AboutSection() {
+interface Props {
+	className?: string;
+}
+
+export function AboutSection({ className }: Props) {
 	return (
 		<div
 			id="about"
-			className="z-10 w-full flex flex-col items-center border-b border-border py-10"
+			className={clsx(
+				"z-10 w-full flex flex-col items-center border-b border-border py-10 relative",
+				className
+			)}
 		>
 			<div className="w-full container relative">
-				<div
-					className={clsx(
-						"w-[300px] aspect-square rounded-full overflow-hidden transition-transform animate-appear border border-black",
-						"duration-700",
-						"absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 opacity-5"
-					)}
-				>
-					<div className="w-full h-full bg-stone-300 relative z-20">
-						<img src={profileImage} className="w-full h-full" alt="" />
-					</div>
-				</div>
 				<div className="w-full">
 					<div className="w-full space-y-2">
 						<h2 className="text-lg lg:text-xl font-semibold">About</h2>

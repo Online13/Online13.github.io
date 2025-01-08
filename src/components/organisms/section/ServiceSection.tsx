@@ -1,9 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import { ServiceCard } from "../card/ServiceCard";
+import clsx from "clsx";
 
-export function ServiceSection() {
+interface Props {
+	className?: string;
+}
+export function ServiceSection({ className }: Props) {
 	return (
-		<div className="w-full border-b border-border py-10">
+		<div
+			className={clsx(
+				"w-full border-b border-border py-10 relative",
+				className
+			)}
+		>
 			<div className="container space-y-4">
 				<h2 className="text-lg lg:text-xl font-semibold">Services</h2>
 				<div className="w-full">

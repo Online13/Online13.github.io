@@ -8,7 +8,7 @@ export function Header() {
          <div className="w-full h-12" />
          <header
             className={clsx(
-               "fixed z-20 top-0 left-0 right-0 w-full h-12 backdrop-blur-xl bg-white/70",
+               "fixed z-50 top-0 left-0 right-0 w-full h-12 backdrop-blur-xl bg-white/70",
                "border-b border-border"
             )}
          >

@@ -4,6 +4,7 @@
 // import { Label } from "@/components/ui/label";
 // import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import clsx from "clsx";
 // import { useState } from "react";
 // import { useForm } from "react-hook-form";
 // import { z } from "zod";
@@ -19,15 +20,24 @@ import { Button } from "@/components/ui/button";
 
 // type ContactFormData = z.infer<typeof contactFormSchema>;
 
-export function ContactSection() {
+interface Props {
+	className?: string;
+}
+
+export function ContactSection({ className }: Props) {
 	return (
-		<div className="relative border-b border-border py-20 w-full">
+		<div
+			className={clsx(
+				"relative border-b border-border py-20 w-full",
+				className
+			)}
+		>
 			<div className="w-full container">
 				<div className="w-full space-y-4">
 					<div className="w-full flex flex-col">
 						<h2 className="text-2xl lg:text-3xl font-semibold">
-							Let's make something <br/>amazing{" "}
-							<span className="text-[#002AFF]">together</span>.
+							Let's make something <br />
+							amazing <span className="text-[#002AFF]">together</span>.
 						</h2>
 					</div>
 					<p className="text-base max-w-md">

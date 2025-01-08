@@ -1,7 +1,18 @@
+import clsx from "clsx";
 
-export function ProposalSection() {
+interface Props {
+	className?: string;
+}
+
+export function ProposalSection({ className }: Props) {
 	return (
-		<div className="w-full border-b border-border py-10">
+		<div
+			className={clsx(
+				"w-full border-b border-border py-10 relative",
+				className
+			)}
+		>
+			{/* <FocusView /> */}
 			<div className="w-full h-full container">
 				<div className="w-full h-full flex items-center">
 					<p className="max-w-xl text-base py-2">
