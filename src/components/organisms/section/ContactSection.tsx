@@ -70,7 +70,7 @@ export function ContactSection({ className }: Props) {
 						.
 					</p>
 					<FloatingActionPanelRoot>
-						{({ mode }) => (
+						{() => (
 							<>
 								<FloatingActionPanelTrigger
 									title="Talk more about your project"
@@ -106,7 +106,7 @@ function ContactForm() {
 		resolver: zodResolver(contactFormSchema),
 	});
 
-	const onSubmit = async (data: ContactFormData) => {
+	const onSubmit = async () => {
 		setIsSubmitting(true);
 		setSubmitResult(null);
 
