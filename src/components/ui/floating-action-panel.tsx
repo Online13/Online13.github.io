@@ -118,7 +118,7 @@ const FloatingActionPanelTrigger = React.forwardRef<
 			ref={triggerRef}
 			layoutId={`floating-panel-trigger-${uniqueId}-${mode}`}
 			className={cn(
-				"flex h-9 items-center rounded-md border border-zinc-200 bg-white px-3 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-zinc-800",
+				"flex h-9 items-center rounded-md border bg-primary text-primary-foreground hover:bg-primary/90 leading-6 px-3 text-sm font-medium shadow-sm",
 				className
 			)}
 			onClick={handleClick}
@@ -207,7 +207,7 @@ const FloatingActionPanelContent = React.forwardRef<
 						animate={{ opacity: 1, scale: 1 }}
 						exit={{ opacity: 0, scale: 0.9 }}
 					>
-						<div className="px-4 py-3 font-medium">{title}</div>
+						<div className="px-4 py-3 font-semibold text-base">{title}</div>
 						{children}
 					</motion.div>
 				</div>

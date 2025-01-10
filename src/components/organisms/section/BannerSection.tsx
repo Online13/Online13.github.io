@@ -1,10 +1,41 @@
 import clsx from "clsx";
 import SocialNetworkLinks from "@/components/molecules/SocialNetworkLinks";
 import profileImage from "@/assets/images/profile.webp";
+import { TextLoop } from "@/components/ui/text-loop";
+import { TextEffect } from "@/components/ui/text-effect";
 
 interface Props {
 	className?: string;
 }
+
+const TEXT_EFFECT_VARIANTS = {
+	container: {
+		hidden: {
+			opacity: 0,
+		},
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.05,
+			},
+		},
+	},
+	item: {
+		hidden: {
+			opacity: 0,
+			rotateX: 90,
+			y: 10,
+		},
+		visible: {
+			opacity: 1,
+			rotateX: 0,
+			y: 0,
+			transition: {
+				duration: 0.2,
+			},
+		},
+	},
+};
 
 export function BannerSection({ className }: Props) {
 	return (
@@ -21,7 +52,7 @@ export function BannerSection({ className }: Props) {
 							<div
 								className={clsx(
 									"w-[100px] aspect-square rounded-full overflow-hidden transition-transform animate-appear border border-black",
-									"duration-700",
+									"duration-700"
 								)}
 							>
 								<div className="w-full h-full bg-stone-300 relative z-20">
@@ -34,24 +65,79 @@ export function BannerSection({ className }: Props) {
 							</div>
 							<div className="text-2xl lg:text-3xl font-semibold">
 								<div>
-									<h1 className="space-x-2 md:space-x-4 text-left">
-										Hi, I’m{" "}
-										<span className="text-[#002AFF]">Rayane</span> and
+									<h1 className="space-x-2 md:space-x-2 text-left flex items-center">
+										<TextEffect
+											per="char"
+											delay={0.5}
+											variants={TEXT_EFFECT_VARIANTS}
+										>
+											Hi, I’m
+										</TextEffect>
+										<TextEffect
+											per="char"
+											delay={1}
+											className="text-[#002AFF]"
+										>
+											Rayane
+										</TextEffect>
+										<TextEffect per="char" delay={1.5}>
+											and
+										</TextEffect>
 									</h1>
 								</div>
 								<div>
-									<h1 className="space-x-2 text-left">
-										<span className="">I’m a</span>
-										<span className="">software engineer.</span>
+									<h1 className="space-x-2 text-left flex items-center">
+										<TextEffect per="char" delay={1.75}>
+											I'm a
+										</TextEffect>
+										<TextLoop
+											className="overflow-y-clip"
+											transition={{
+												type: "spring",
+												stiffness: 900,
+												damping: 80,
+												mass: 10,
+											}}
+											variants={{
+												initial: {
+													y: 20,
+													rotateX: 90,
+													opacity: 0,
+													filter: "blur(4px)",
+												},
+												animate: {
+													y: 0,
+													rotateX: 0,
+													opacity: 1,
+													filter: "blur(0px)",
+												},
+												exit: {
+													y: -20,
+													rotateX: -90,
+													opacity: 0,
+													filter: "blur(4px)",
+												},
+											}}
+										>
+											<span className="">Software engineer.</span>
+											<span>NLP engineer</span>
+											<span>Fullstack Js developer</span>
+											<span>React Native developer</span>
+										</TextLoop>
 									</h1>
 								</div>
 							</div>
 						</div>
-						<p className="max-w-xl text-left text-base text-slate-900">
+						<TextEffect
+							as="p"
+							per="char"
+							delay={2}
+							className="max-w-xl text-left text-base text-slate-900"
+						>
 							I find true satisfaction in crafting captivating user
 							interfaces and software solutions, seamlessly blending
 							aesthetics and functionality.
-						</p>
+						</TextEffect>
 					</div>
 					<div className="inline-block">
 						<SocialNetworkLinks />
