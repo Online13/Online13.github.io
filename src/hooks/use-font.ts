@@ -2,6 +2,22 @@ import { FontData } from "@/type";
 import { wait } from "@/utils/async";
 import { useRef, useSyncExternalStore } from "react";
 
+export function useFont(fonts: FontData[]) {
+	const fontStore = useRef<FontStore | null>(null);
+	if (fontStore.current === null) {
+		fontStore.current = createFontStore(fonts);
+	}
+
+	const status = useSyncExternalStore(
+		fontStore.current.subscribe,
+		fontStore.current.getSnapshot
+	);
+	const isLoading = status === "loading";
+
+	return isLoading;
+}
+
+
 function createFontStore(_fonts: FontData[]) {
 	const fonts = _fonts.map((font) => {
 		return new FontFace(font.name, `url(${font.path})`, font.options);
@@ -41,18 +57,3 @@ function createFontStore(_fonts: FontData[]) {
 }
 
 type FontStore = ReturnType<typeof createFontStore>;
-
-export function useFont(fonts: FontData[]) {
-	const fontStore = useRef<FontStore | null>(null);
-	if (fontStore.current === null) {
-		fontStore.current = createFontStore(fonts);
-	}
-
-	const status = useSyncExternalStore(
-		fontStore.current.subscribe,
-		fontStore.current.getSnapshot
-	);
-	const isLoading = status === "loading";
-
-	return isLoading;
-}

@@ -63,7 +63,7 @@ export function BannerSection({ className }: Props) {
 									/>
 								</div>
 							</div>
-							<div className="text-2xl lg:text-3xl font-semibold">
+							<div className="text-xl lg:text-2xl font-semibold">
 								<div>
 									<h1 className="space-x-2 md:space-x-2 text-left flex items-center">
 										<TextEffect
@@ -103,26 +103,21 @@ export function BannerSection({ className }: Props) {
 													y: 20,
 													rotateX: 90,
 													opacity: 0,
-													filter: "blur(4px)",
 												},
 												animate: {
 													y: 0,
 													rotateX: 0,
 													opacity: 1,
-													filter: "blur(0px)",
 												},
 												exit: {
 													y: -20,
 													rotateX: -90,
 													opacity: 0,
-													filter: "blur(4px)",
 												},
 											}}
 										>
 											<span className="">Software engineer.</span>
 											<span>NLP engineer</span>
-											<span>Fullstack Js developer</span>
-											<span>React Native developer</span>
 										</TextLoop>
 									</h1>
 								</div>
@@ -132,7 +127,7 @@ export function BannerSection({ className }: Props) {
 							as="p"
 							per="char"
 							delay={2}
-							className="max-w-xl text-left text-base text-slate-900"
+							className="max-w-xl text-left text-base text-stone-700"
 						>
 							I find true satisfaction in crafting captivating user
 							interfaces and software solutions, seamlessly blending

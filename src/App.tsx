@@ -11,11 +11,11 @@ const fonts = [...loraFont, ...calibreFont];
 function App() {
 	const isLoadingFont = useFont(fonts);
 
-	if (isLoadingFont) {
-		return <SplashScreen />;
-	}
-
-	return <RouterProvider router={router} />;
+	return (
+		<SplashScreen loading={isLoadingFont}>
+			<RouterProvider router={router} />
+		</SplashScreen>
+	);
 }
 
 export default App;
