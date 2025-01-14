@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import SocialNetworkLinks from "@/components/molecules/SocialNetworkLinks";
 import profileImage from "@/assets/images/profile.webp";
 import { TextLoop } from "@/components/ui/text-loop";
@@ -41,7 +42,7 @@ export function BannerSection({ className }: Props) {
 	return (
 		<div
 			className={clsx(
-				"w-full py-20 flex flex-col justify-center items-center border-y border-border relative",
+				"w-full py-10 flex flex-col justify-center items-center border-y border-border relative",
 				className
 			)}
 		>
@@ -49,10 +50,18 @@ export function BannerSection({ className }: Props) {
 				<div className="space-y-4">
 					<div className="grid gap-2">
 						<div className="flex items-center gap-6">
-							<div
+							<motion.div
+								initial={{ opacity: 0, scale: 0 }}
+								animate={{ opacity: 1, scale: 1 }}
+								transition={{
+									delay: 4,
+									duration: 0.4,
+									type: "spring",
+									visualDuration: 0.4,
+									bounce: 0.5,
+								}}
 								className={clsx(
-									"w-[100px] aspect-square rounded-full overflow-hidden transition-transform animate-appear border border-black",
-									"duration-700"
+									"w-[100px] aspect-square rounded-full overflow-hidden border border-black"
 								)}
 							>
 								<div className="w-full h-full bg-stone-300 relative z-20">
@@ -62,7 +71,7 @@ export function BannerSection({ className }: Props) {
 										alt=""
 									/>
 								</div>
-							</div>
+							</motion.div>
 							<div className="text-xl lg:text-2xl font-semibold">
 								<div>
 									<h1 className="space-x-2 md:space-x-2 text-left flex items-center">

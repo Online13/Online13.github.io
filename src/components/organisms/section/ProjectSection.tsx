@@ -1,5 +1,7 @@
+import { BibilPreview } from "@/components/molecules/BibilPreview";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 interface Props {
 	className?: string;
@@ -21,14 +23,15 @@ export function ProjectSection({ className }: Props) {
 					<ProjectPreview
 						title="Bibil"
 						subtitle="An app for easy car rentals in Madagascar."
+						preview={<BibilPreview />}
+					/>
+					<ProjectPreview
+						title="PokerApply"
+						subtitle="A chat app for poker player"
 					/>
 					<ProjectPreview
 						title="Geo-Infrastructure"
 						subtitle="An app for infrastructure mapping in Madagascar."
-					/>
-					<ProjectPreview
-						title="My blob"
-						subtitle="Journey through my ideas and insights."
 					/>
 				</div>
 				<div className="pt-4">
@@ -44,9 +47,10 @@ export function ProjectSection({ className }: Props) {
 type ProjectPreviewProps = {
 	title: string;
 	subtitle: string;
+	preview?: ReactNode;
 };
 
-function ProjectPreview({ title, subtitle }: ProjectPreviewProps) {
+function ProjectPreview({ title, subtitle, preview }: ProjectPreviewProps) {
 	return (
 		<div className="border-b border-b-border hover:bg-sky-50/20 cursor-pointer">
 			<div className="w-full pt-8 pb-12 z-30 space-y-2 flex items-start justify-between">
@@ -59,7 +63,7 @@ function ProjectPreview({ title, subtitle }: ProjectPreviewProps) {
 							{subtitle}
 						</h2>
 					</div>
-					<p className="max-w-lg text-base text-stone-500 group-hover:text-black">
+					<p className="max-w-lg text-sm">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Voluptatem sequi deserunt cumque rerum similique.
 					</p>
@@ -67,10 +71,10 @@ function ProjectPreview({ title, subtitle }: ProjectPreviewProps) {
 			</div>
 			<div
 				className={clsx(
-					"w-full min-h-[420px] border border-black z-20 flex justify-center items-center"
+					"w-full h-[420px] border border-border rounded-xl overflow-hidden z-20 flex justify-center items-center"
 				)}
 			>
-				<span className="text-2xl text-slate-500">comming soon...</span>
+				{preview}
 			</div>
 		</div>
 	);

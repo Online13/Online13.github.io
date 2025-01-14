@@ -6,14 +6,14 @@ import { ContactSection } from "@/components/organisms/section/ContactSection";
 import { ProjectSection } from "@/components/organisms/section/ProjectSection";
 import { ProposalSection } from "@/components/organisms/section/ProposalSection";
 import { ServiceSection } from "@/components/organisms/section/ServiceSection";
-import { TableContent } from "@/components/organisms/TableContent";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { usePageTheme } from "@/stores/page-store";
 import { useScrollUpdate } from "@/stores/scroll-store";
 import { PropsWithChildren } from "react";
 
 function HomePage() {
 	return (
-		<div id="home" className="w-full h-full overflow-hidden">
+		<PageProvider>
 			<ScrollProvider>
 				<Header />
 				<div className="w-full">
@@ -26,7 +26,7 @@ function HomePage() {
 				</div>
 				<Footer />
 			</ScrollProvider>
-		</div>
+		</PageProvider>
 	);
 }
 
@@ -48,4 +48,19 @@ function ScrollProvider({ children }: PropsWithChildren) {
 	);
 }
 
+function PageProvider({ children }: PropsWithChildren) {
+	const { bg, color } = usePageTheme();
+	return (
+		<div
+			id="home"
+			className="w-full h-full overflow-hidden transition-colors duration-700"
+			style={{
+				backgroundColor: bg,
+				color,
+			}}
+		>
+			{children}
+		</div>
+	);
+}
 export default HomePage;

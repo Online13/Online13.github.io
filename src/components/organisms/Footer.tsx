@@ -10,7 +10,7 @@ export function Footer() {
 			viewport={{ amount: 0.1 }}
 			style={{ transformOrigin: "bottom" }}
 		>
-			<div className="container h-full flex flex-col md:flex-row justify-between gap-4 md:gap-0 py-4">
+			<div className=" relative z-30 container flex flex-col md:flex-row justify-between gap-4 md:gap-0 py-8 overflow-visible">
 				<p className="text-base">
 					Designed & Built by <span className="font-medium">@Rayane</span>
 				</p>

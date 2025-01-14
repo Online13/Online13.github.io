@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: ["class"],
+	darkMode: ['selector', '[data-mode="dark"]'],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -95,10 +95,15 @@ module.exports = {
 						height: "0",
 					},
 				},
+				"wave-pulse": {
+					"0%, 100%": { opacity: 0.4 },
+					"50%": { opacity: 0.7 },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+				"wave-pulse": "wave-pulse 4s ease-in-out infinite",
 			},
 			transitionTimingFunction: {
 				elastic: "cubic-bezier(0.7,0,0.7,1.5)",
