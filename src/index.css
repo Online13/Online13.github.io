@@ -1,10 +1,7 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-* {
-	font-family: "Calibre", Arial, serif;
-}
 
 *::selection {
 	background-color: black;

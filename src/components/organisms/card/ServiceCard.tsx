@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 
 type ServiceProps = PropsWithChildren<{
 	className?: string;
+	onClick?: () => void;
 }>;
 
 export function ServiceCard(props: ServiceProps) {
@@ -10,6 +11,7 @@ export function ServiceCard(props: ServiceProps) {
 
 	return (
 		<div
+			onClick={props.onClick}
 			className={cn(
 				"w-full h-full py-4 pr-4",
 				"cursor-pointer flex justify-between items-center hover:bg-stone-100/70 hover:px-4 transition-[padding] duration-500 rounded-md",

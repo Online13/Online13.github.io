@@ -8,13 +8,11 @@ import {
 	FloatingActionPanelTrigger,
 } from "@/components/ui/floating-action-panel";
 import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import { useInView } from "framer-motion";
-import { usePageUpdateTheme } from "@/stores/page-store";
 
 const contactFormSchema = z.object({
 	name: z.string().min(1, { message: "Name is required" }),
@@ -31,26 +29,8 @@ interface Props {
 }
 
 export function ContactSection({ className }: Props) {
-	const ref = useRef<HTMLDivElement>(null);
-	const isInView = useInView(ref, {
-		amount: 1,
-		margin: "20% 0px 20% 0px",
-	});
-	const updateBg = usePageUpdateTheme();
-
-	useEffect(() => {
-		if (isInView) {
-			updateBg("dark");
-			// update background to black
-		} else {
-			updateBg("light");
-			// update to white
-		}
-	}, [isInView]);
-
 	return (
 		<div
-			ref={ref}
 			className={clsx(
 				"relative border-b border-border py-20 w-full",
 				className

@@ -1,4 +1,6 @@
 import { BibilPreview } from "@/components/molecules/BibilPreview";
+import { GeoInfraPreview } from "@/components/molecules/GeoInfraPreview";
+import { PokerApplyPreview } from "@/components/molecules/PokerApplyPreview";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
 import { ReactNode } from "react";
@@ -28,10 +30,12 @@ export function ProjectSection({ className }: Props) {
 					<ProjectPreview
 						title="PokerApply"
 						subtitle="A chat app for poker player"
+						preview={<PokerApplyPreview />}
 					/>
 					<ProjectPreview
 						title="Geo-Infrastructure"
 						subtitle="An app for infrastructure mapping in Madagascar."
+						preview={<GeoInfraPreview />}
 					/>
 				</div>
 				<div className="pt-4">
@@ -71,7 +75,7 @@ function ProjectPreview({ title, subtitle, preview }: ProjectPreviewProps) {
 			</div>
 			<div
 				className={clsx(
-					"w-full h-[420px] border border-border rounded-xl overflow-hidden z-20 flex justify-center items-center"
+					"w-full h-[420px] border border-border rounded-xl overflow-hidden z-20 flex justify-center items-center relative"
 				)}
 			>
 				{preview}

@@ -8,7 +8,7 @@ export function SplashScreen({
 	const variantKey = loading ? "loading" : "done";
 
 	return (
-		<div className="w-full h-full flex flex-col">
+		<div className="w-full h-full flex flex-col font-inter">
 			<motion.div
 				animate={variantKey}
 				variants={{

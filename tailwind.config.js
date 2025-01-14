@@ -18,8 +18,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				lora: ["Lora", "serif"],
-				calibre: ["Calibre", "sans-serif"],
+				inter: ["Int", "serif"],
 			},
 			colors: {
 				border: "hsl(var(--border))",

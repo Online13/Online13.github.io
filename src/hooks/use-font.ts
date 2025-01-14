@@ -23,8 +23,10 @@ function createFontStore(_fonts: FontData[]) {
 		return new FontFace(font.name, `url(${font.path})`, font.options);
 	});
 	for (const font of fonts) {
-		document.fonts.add(font);
-		font.load();
+		font.load().then((loadedFont) => {
+			document.fonts.add(loadedFont);
+		});
+		// document.fonts.add(font);
 	}
 
 	const unsubscribe = () => {
@@ -34,13 +36,17 @@ function createFontStore(_fonts: FontData[]) {
 	};
 
 	const subscribe = (onStoreChange: () => void) => {
-		document.fonts.onloadingerror = () => {
-			console.log("Font loading error...");
-		};
-
-		Promise.all([document.fonts.ready, wait(1200)]).then(() => {
-			onStoreChange();
-		});
+		try {
+			document.fonts.onloadingerror = () => {
+				console.log("Font loading error...");
+			};
+	
+			Promise.all([document.fonts.ready, wait(1200)]).then(() => {
+				onStoreChange();
+			});
+		} catch (err) {
+			console.log(err);
+		}
 
 		return unsubscribe;
 	};

@@ -102,7 +102,8 @@ interface FloatingActionPanelTriggerProps {
 const FloatingActionPanelTrigger = React.forwardRef<
 	HTMLButtonElement,
 	FloatingActionPanelTriggerProps
->(({ children, className, title, mode }) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+>(({ children, className, title, mode }, _) => {
 	const { openPanel, uniqueId, setTitle } = useFloatingActionPanel();
 	const triggerRef = React.useRef<HTMLButtonElement>(null);
 
@@ -139,7 +140,8 @@ interface FloatingActionPanelContentProps {
 const FloatingActionPanelContent = React.forwardRef<
 	HTMLDivElement,
 	FloatingActionPanelContentProps
->(({ children, className }) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+>(({ children, className }, _) => {
 	const { isOpen, closePanel, uniqueId, triggerRect, title, mode } =
 		useFloatingActionPanel();
 	const contentRef = React.useRef<HTMLDivElement>(null);

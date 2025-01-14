@@ -1,12 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import routes from "./routes";
 import { useFont } from "./hooks/use-font";
-import { calibreFont } from "./assets/fonts/calibre";
 import { SplashScreen } from "./components/molecules/SplashScreen";
-import { loraFont } from "./assets/fonts/lora";
+import { interFont } from "./assets/fonts/inter";
 
 const router = createBrowserRouter(routes);
-const fonts = [...loraFont, ...calibreFont];
+const fonts = [...interFont];
 
 function App() {
 	const isLoadingFont = useFont(fonts);
