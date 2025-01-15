@@ -29,19 +29,19 @@ function SocialNetworkLinks() {
 	return (
 		<div className="w-full flex justify-between items-center gap-2">
 			<SocialLink to="mailto:rratiarivelo@gmail.com">
-				<EmailIcon className="group-hover:scale-110" />
+				<EmailIcon className="w-5 h-5 group-hover:scale-110" />
 			</SocialLink>
 			<SocialLink to="https://github.com/Online13/">
-				<GithubIcon className="group-hover:scale-110" />
+				<GithubIcon className="w-5 h-5 group-hover:scale-110" />
 			</SocialLink>
 			<SocialLink to="https://www.linkedin.com/in/nekena-rayane-ratiarivelo-2115751b9/">
-				<LinkedinIcon className="group-hover:scale-110" />
+				<LinkedinIcon className="w-5 h-5 group-hover:scale-110" />
 			</SocialLink>
 			<SocialLink to="https://wa.me/261341313373">
-				<WhatsAppIcon className="group-hover:scale-110" />
+				<WhatsAppIcon className="w-5 h-5 group-hover:scale-110" />
 			</SocialLink>
 			<SocialLink to="https://web.facebook.com/Online.Nk13/">
-				<FacebookIcon className="group-hover:scale-110" />
+				<FacebookIcon className="w-5 h-5 group-hover:scale-110" />
 			</SocialLink>
 		</div>
 	);

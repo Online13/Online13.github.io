@@ -57,20 +57,16 @@ type ProjectPreviewProps = {
 function ProjectPreview({ title, subtitle, preview }: ProjectPreviewProps) {
 	return (
 		<div className="border-b border-b-border hover:bg-sky-50/20 cursor-pointer">
-			<div className="w-full pt-8 pb-12 z-30 space-y-2 flex items-start justify-between">
+			<div className="w-full pt-8 pb-4 z-30 space-y-2 flex items-start justify-between">
 				<div className="space-y-4">
 					<div className="">
-						<h2 className="text-xl font-semibold text-[#002AFF]">
+						<h2 className="text-lg lg:text-xl font-semibold text-[#002AFF]">
 							{title}
 						</h2>
 						<h2 className="text-base font-semibold max-w-lg">
 							{subtitle}
 						</h2>
 					</div>
-					<p className="max-w-lg text-sm">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Voluptatem sequi deserunt cumque rerum similique.
-					</p>
 				</div>
 			</div>
 			<div

@@ -27,6 +27,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "2%",
+							x: -180
 						},
 					}}
 				>
@@ -46,6 +47,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "-100%",
+							x: -180
 						},
 					}}
 				>
@@ -63,6 +65,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "-100%",
+							x: -180
 						},
 					}}
 				>
@@ -82,6 +85,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "2%",
+							x: -180
 						},
 					}}
 				>
@@ -101,6 +105,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "-100%",
+							x: -180
 						},
 					}}
 				>
@@ -118,6 +123,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "-100%",
+							x: -180
 						},
 					}}
 				>
@@ -137,6 +143,7 @@ export function PokerApplyPreview() {
 						},
 						end: {
 							y: "2%",
+							x: -180
 						},
 					}}
 				>

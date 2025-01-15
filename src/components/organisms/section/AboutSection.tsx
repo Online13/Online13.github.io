@@ -20,9 +20,10 @@ export function AboutSection({ className }: Props) {
 						<div className="text-base">
 							<div className="space-y-6 text-stone-700">
 								<p>
-									I'm an independent developer specializing in software
-									engineering and artificial intelligence, with a focus
-									on natural language processing (NLP).
+									I'm an independent developer specializing in{" "}
+									<b>software engineering</b> and{" "}
+									<b>artificial intelligence</b>, with a focus on
+									natural language processing (NLP).
 								</p>
 								<p>
 									With a background in mathematics, I developed a
