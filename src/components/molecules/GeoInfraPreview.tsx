@@ -7,7 +7,7 @@ export function GeoInfraPreview() {
 		<motion.div
 			initial="initial"
 			whileInView="end"
-			viewport={{ amount: 1, once: true, margin: "126px 0px" }}
+			viewport={{ amount: 1, margin: "126px 0px" }}
 			className="w-full h-full relative flex items-center gap-4 bg-stone-900/5 overflow-hidden"
 		>
 			<motion.div
@@ -23,7 +23,18 @@ export function GeoInfraPreview() {
 			>
 				<img src={BsInfra} alt="" />
 			</motion.div>
-			<motion.div className="w-full h-full p-8">
+			<motion.div
+				className="w-full h-full p-8"
+				whileHover="end"
+				variants={{
+					initial: {
+						y: 0,
+					},
+					end: {
+						y: "-50%",
+					},
+				}}
+			>
 				<img src={GeoInfraScreen} alt="" className="w-[250px]" />
 			</motion.div>
 		</motion.div>

@@ -7,7 +7,7 @@ import {
 
 export function DesignSidebarContent() {
 	return (
-		<SheetContent className="w-[900px] max-w-none sm:max-w-none ">
+		<SheetContent className="w-[600px] max-w-none sm:max-w-none ">
 			<SheetHeader>
 				<SheetTitle>Research and Analysis:</SheetTitle>
 				<SheetDescription>

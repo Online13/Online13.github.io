@@ -4,6 +4,7 @@ import SocialNetworkLinks from "../molecules/SocialNetworkLinks";
 export function Footer() {
 	return (
 		<motion.footer
+			layout
 			className="h-56 bg-[#0E0F12] text-slate-100 relative"
 			initial={{ scaleY: 0.5 }}
 			whileInView={{ scaleY: 1 }}

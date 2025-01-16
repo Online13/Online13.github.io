@@ -91,21 +91,28 @@ export function ContactSection({ className }: Props) {
 						.
 					</p>
 					<div className="flex items-center gap-4">
-						<Button onClick={handleOpenContactForm}>
-							<span>Contact me</span>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								className="w-4 h-4"
-							>
-								<path d="M9.912 12H4L2.023 4.135A.662.662 0 0 1 2 3.995c-.022-.721.772-1.221 1.46-.891L22 12 3.46 20.896c-.68.327-1.464-.159-1.46-.867a.66.66 0 0 1 .033-.186L3.5 15" />
-							</svg>
-						</Button>
+						<motion.div
+							whileTap={{
+								scale: 0.9,
+							}}
+							initial={{ scale: 1 }}
+						>
+							<Button onClick={handleOpenContactForm}>
+								<span>Contact me</span>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth={2}
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									className="w-4 h-4"
+								>
+									<path d="M9.912 12H4L2.023 4.135A.662.662 0 0 1 2 3.995c-.022-.721.772-1.221 1.46-.891L22 12 3.46 20.896c-.68.327-1.464-.159-1.46-.867a.66.66 0 0 1 .033-.186L3.5 15" />
+								</svg>
+							</Button>
+						</motion.div>
 						<div className="">
 							<SocialNetworkLinks />
 						</div>
@@ -253,9 +260,21 @@ function ContactForm({ isVisible, focusOn, onClose }: ContactFormProps) {
 											</p>
 										)}
 									</div>
-									<Button type="submit" disabled={isSubmitting}>
-										{isSubmitting ? "Sending..." : "Send Email"}
-									</Button>
+									<motion.div
+										whileTap={{
+											scale: 0.9,
+										}}
+										initial={{ scale: 1 }}
+										transition={{ easings: ["backOut"] }}
+										style={{
+											display: 'inline-block',
+											transformOrigin: 'center'
+										}}
+									>
+										<Button type="submit" disabled={isSubmitting}>
+											{isSubmitting ? "Sending..." : "Send Email"}
+										</Button>
+									</motion.div>
 									{submitResult && (
 										<Alert
 											variant={

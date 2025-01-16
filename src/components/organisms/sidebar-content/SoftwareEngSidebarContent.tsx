@@ -7,7 +7,7 @@ import {
 
 export function SoftwareEngSidebarContent() {
 	return (
-		<SheetContent className="w-[900px] max-w-none sm:max-w-none">
+		<SheetContent className="w-[600px] max-w-none sm:max-w-none">
 			<SheetHeader>
 				<SheetTitle>Software Engineering</SheetTitle>
 				<SheetDescription>
