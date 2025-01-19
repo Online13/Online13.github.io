@@ -4,9 +4,9 @@ import { cn } from "@/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocation, useOutlet } from "react-router-dom";
 import { useScrollUpdate } from "@/stores/scroll-store";
-import { Header } from "@/components/organisms/Header";
-import { Footer } from "@/components/organisms/Footer";
 import { ScrollView } from "@/components/atoms/view/ScrollView";
+import { Header } from "@/components/template/Header";
+import { Footer } from "@/components/template/Footer";
 
 export function Layout() {
 	const outlet = useOutlet();
@@ -15,7 +15,7 @@ export function Layout() {
 
 	useEffect(() => {
 		updateScroll(0, 0);
-	}, [location]);
+	}, [location, updateScroll]);
 
 	return (
 		<AnimatePresence mode="wait">

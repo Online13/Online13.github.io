@@ -1,32 +1,26 @@
-
-export type SkillType = { id: number; name: string };
-
-// Languages
-export const LANGUAGES: SkillType[] = [
-	{ id: 0, name: "Javascript" },
-	{ id: 1, name: "Typescript" },
-	{ id: 2, name: "CSS" },
-	{ id: 3, name: "Java" },
-	{ id: 4, name: "SQL" },
-];
-
-// Libraries / Frameworks
-export const LIBRARIESFRAMEWORKS: SkillType[] = [
-	{ id: 0, name: "React JS/TS" },
-	{ id: 1, name: "Angular" },
-	{ id: 2, name: "Vue Js" },
-	{ id: 3, name: "React Native" },
-	{ id: 4, name: "Express Js" },
-	{ id: 5, name: "FastAPI" },
-	{ id: 6, name: "Nest Js" },
-	{ id: 7, name: "Spring boot" },
-	{ id: 8, name: "Protobuf" },
-	{ id: 9, name: "Pytorch" },
-	{ id: 10, name: "Pandas" },
-];
-
-// Logiciels / Multimedia
-export const LOGICIELSMULTIMEDIA: SkillType[] = [
-	{ id: 0, name: "Figma" },
-	{ id: 1, name: "Inkscape" },
+export const SKILLS_DATA = [
+	{
+		category: "Languages",
+		skills: ["Typescript", "Python", "SQL"],
+	},
+	{
+		category: "Frontend development",
+		skills: ["React", "Next.js", "TailwindCSS", "Framer Motion"],
+	},
+	{
+		category: "Backend development",
+		skills: ["Node js", "Express Js", "FastAPI", "Supabase"],
+	},
+	{
+		category: "Mobile development",
+		skills: ["React Native"],
+	},
+	{
+		category: "UI/UX Design",
+		skills: ["Figma", "Inkscape"],
+	},
+	{
+		category: "Data Science & AI",
+		skills: ["Pytorch", "Pandas"],
+	},
 ];

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
 	GithubIcon,
@@ -6,6 +7,23 @@ import {
 	EmailIcon,
 	WhatsAppIcon,
 } from "@/components/atoms/icons";
+
+const itemVariants = {
+	hidden: {
+		scale: 0,
+		y: 30,
+		opacity: 0,
+	},
+	show: {
+		scale: 1,
+		y: 0,
+		opacity: 1,
+		transition: {
+			delayChildren: 1.3,
+			staggerChildren: 0.25,
+		},
+	},
+};
 
 function SocialLink({
 	to,
@@ -27,23 +45,39 @@ function SocialLink({
 
 function SocialNetworkLinks() {
 	return (
-		<div className="w-full flex justify-between items-center gap-2">
-			<SocialLink to="mailto:rratiarivelo@gmail.com">
-				<EmailIcon className="w-5 h-5 group-hover:scale-110" />
-			</SocialLink>
-			<SocialLink to="https://github.com/Online13/">
-				<GithubIcon className="w-5 h-5 group-hover:scale-110" />
-			</SocialLink>
-			<SocialLink to="https://www.linkedin.com/in/nekena-rayane-ratiarivelo-2115751b9/">
-				<LinkedinIcon className="w-5 h-5 group-hover:scale-110" />
-			</SocialLink>
-			<SocialLink to="https://wa.me/261341313373">
-				<WhatsAppIcon className="w-5 h-5 group-hover:scale-110" />
-			</SocialLink>
-			<SocialLink to="https://web.facebook.com/Online.Nk13/">
-				<FacebookIcon className="w-5 h-5 group-hover:scale-110" />
-			</SocialLink>
-		</div>
+		<motion.div
+			initial="hidden"
+			whileInView="show"
+			variants={itemVariants}
+			viewport={{ once: true }}
+			className="w-full flex justify-between items-center gap-2"
+		>
+			<motion.div variants={itemVariants}>
+				<SocialLink to="mailto:rratiarivelo@gmail.com">
+					<EmailIcon className="w-5 h-5 group-hover:scale-110" />
+				</SocialLink>
+			</motion.div>
+			<motion.div variants={itemVariants}>
+				<SocialLink to="https://github.com/Online13/">
+					<GithubIcon className="w-5 h-5 group-hover:scale-110" />
+				</SocialLink>
+			</motion.div>
+			<motion.div variants={itemVariants}>
+				<SocialLink to="https://www.linkedin.com/in/nekena-rayane-ratiarivelo-2115751b9/">
+					<LinkedinIcon className="w-5 h-5 group-hover:scale-110" />
+				</SocialLink>
+			</motion.div>
+			<motion.div variants={itemVariants}>
+				<SocialLink to="https://wa.me/261341313373">
+					<WhatsAppIcon className="w-5 h-5 group-hover:scale-110" />
+				</SocialLink>
+			</motion.div>
+			<motion.div variants={itemVariants}>
+				<SocialLink to="https://web.facebook.com/Online.Nk13/">
+					<FacebookIcon className="w-5 h-5 group-hover:scale-110" />
+				</SocialLink>
+			</motion.div>
+		</motion.div>
 	);
 }
 

@@ -2,25 +2,13 @@ import { BibilPreview } from "@/components/molecules/BibilPreview";
 import { GeoInfraPreview } from "@/components/molecules/GeoInfraPreview";
 import { PokerApplyPreview } from "@/components/molecules/PokerApplyPreview";
 import { ProjectPreview } from "@/components/molecules/ProjectPreview";
-import { cn } from "@/utils";
+import { ProjectBannerSection } from "@/components/organisms/section/ProjectBannerSection";
 
 export function ProjectPage() {
 	return (
 		<div id="project">
-			<BannerSection />
+			<ProjectBannerSection />
 			<ListSection />
-		</div>
-	);
-}
-
-export function BannerSection() {
-	return (
-		<div
-			className={cn(
-				"w-full py-10 flex flex-col justify-center items-center border-y border-border relative"
-			)}
-		>
-			<h1 className="text-xl lg:text-2xl font-semibold">Projects.</h1>
 		</div>
 	);
 }

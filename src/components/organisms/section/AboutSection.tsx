@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 interface Props {
 	className?: string;
@@ -18,7 +19,17 @@ export function AboutSection({ className }: Props) {
 					<div className="w-full space-y-2">
 						<h2 className="text-lg lg:text-xl font-semibold">About</h2>
 						<div className="text-base">
-							<div className="space-y-6 text-stone-700">
+							<motion.div
+								className="space-y-6 text-stone-700"
+								transition={{
+									delay: 0.3,
+									type: "spring",
+									visualDuration: 0.8,
+									bounce: 0.5,
+								}}
+								initial={{ opacity: 0, y: 50 }}
+								animate={{ opacity: 1, y: 0 }}
+							>
 								<p>
 									I'm an independent developer specializing in{" "}
 									<b>software engineering</b> and{" "}
@@ -26,17 +37,21 @@ export function AboutSection({ className }: Props) {
 									natural language processing (NLP).
 								</p>
 								<p>
-									With a background in mathematics, I developed a
-									passion for creating impactful solutions. Today, I
-									work across web development, mobile development,
-									UI/UX design, and artificial intelligence, delivering
-									tailored digital experiences and innovative tools.
+									Over the years, I've had the privilege of working on
+									diverse projects, from creating mobile applications
+									for ministries in Madagascar to redesigning
+									applications and improving their architecture for
+									better scalability. Recently, I've been focusing on
+									crafting intuitive interfaces that enhance user
+									experiences, while also diving deeper into research
+									and development in NLP to address complex problems
+									and create innovative solutions.
 								</p>
 								<p>
 									Thanks for visiting—feel free to reach out! I'm
 									always open to collaborating and exchanging ideas.
 								</p>
-							</div>
+							</motion.div>
 						</div>
 					</div>
 				</div>

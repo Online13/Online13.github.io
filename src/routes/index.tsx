@@ -3,14 +3,14 @@ import { ProjectPage } from "@/pages/ProjectPage";
 import { RouteObject } from "react-router-dom";
 import { Layout, MotionBox } from "./Layout";
 import { AboutPage } from "@/pages/AboutPage";
+import { path } from "./path";
 
 const routes: RouteObject[] = [
 	{
-		path: "",
 		element: <Layout />,
 		children: [
 			{
-				path: "",
+				path: path.root,
 				element: (
 					<MotionBox>
 						<HomePage />
@@ -18,16 +18,20 @@ const routes: RouteObject[] = [
 				),
 			},
 			{
-				path: "project",
-				element: <MotionBox>
-					<ProjectPage />
-				</MotionBox>,
+				path: path.project.root,
+				element: (
+					<MotionBox>
+						<ProjectPage />
+					</MotionBox>
+				),
 			},
 			{
-				path: "about",
-				element: <MotionBox>
-					<AboutPage />
-				</MotionBox>,
+				path: path.about,
+				element: (
+					<MotionBox>
+						<AboutPage />
+					</MotionBox>
+				),
 			},
 		],
 	},

@@ -7,7 +7,6 @@ export function GeoInfraPreview() {
 		<motion.div
 			initial="initial"
 			whileInView="end"
-			viewport={{ amount: 1, margin: "126px 0px" }}
 			className="w-full h-full relative flex items-center gap-4 bg-stone-900/5 overflow-hidden"
 		>
 			<motion.div

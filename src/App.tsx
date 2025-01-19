@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import routes from "./routes";
 import { useFont } from "./hooks/use-font";
-import { SplashScreen } from "./components/molecules/SplashScreen";
+import { LoadingOverlay } from "./components/molecules/SplashScreen";
 import { interFont } from "./assets/fonts/inter";
 
 const router = createBrowserRouter(routes);
@@ -11,9 +11,9 @@ function App() {
 	const isLoadingFont = useFont(fonts);
 
 	return (
-		<SplashScreen loading={isLoadingFont}>
+		<LoadingOverlay loading={isLoadingFont}>
 			<RouterProvider router={router} />
-		</SplashScreen>
+		</LoadingOverlay>
 	);
 }
 
