@@ -1,4 +1,3 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { useScrollUpdate } from "@/stores/scroll-store";
 import { PropsWithChildren } from "react";
 
