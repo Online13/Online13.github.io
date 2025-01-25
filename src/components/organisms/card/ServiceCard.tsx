@@ -20,8 +20,7 @@ export function ServiceCard(props: ServiceProps) {
 				y: 0,
 				opacity: 1,
 			}}
-			viewport={{ once: true }}
-			transition={{ delay: 0.8 }}
+			viewport={{ once: true, amount: "all" }}
 			onClick={props.onClick}
 			className={cn(
 				"w-full h-full py-4 pr-4 group",

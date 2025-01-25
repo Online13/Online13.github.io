@@ -9,7 +9,7 @@ type ProjectPreviewProps = {
 
 export function ProjectPreview({ title, subtitle, preview }: ProjectPreviewProps) {
 	return (
-		<div className="group border-b border-b-border cursor-pointer hover:bg-stone-100/70 duration-500 rounded-md mt-4">
+		<div className="group border-b border-b-border cursor-pointer duration-500 rounded-md mt-4">
 			<div className="w-full pt-4 pb-4 z-30 space-y-2 flex items-start justify-between">
 				<div className="space-y-4">
 					<div className="transition-[padding] group-hover:px-4">

@@ -69,21 +69,21 @@ export function BannerSection({ className }: Props) {
 									</div>
 									<div>
 										<h1 className="space-x-2 text-left flex items-center overflow-hidden">
-											{[
-												"I'm a ",
-												"Software engineer ",
-												"/",
-												" NLP Researcher",
-											].map((text, i) => (
-												<motion.span
-													key={text}
-													initial={{ opacity: 0, y: 200 }}
-													animate={{ opacity: 1, y: 0 }}
-													transition={{ duration: 0.8, delay: 1.2 + i * 0.3 }}
-												>
-													{text}
-												</motion.span>
-											))}
+											{["I'm a ", "Software engineer "].map(
+												(text, i) => (
+													<motion.span
+														key={text}
+														initial={{ opacity: 0, y: 200 }}
+														animate={{ opacity: 1, y: 0 }}
+														transition={{
+															duration: 0.8,
+															delay: 1.2 + i * 0.3,
+														}}
+													>
+														{text}
+													</motion.span>
+												)
+											)}
 										</h1>
 									</div>
 								</div>
@@ -94,11 +94,9 @@ export function BannerSection({ className }: Props) {
 								transition={{ delay: 1.6, duration: 0.8 }}
 								className="max-w-xl text-left text-base text-stone-700"
 							>
-								I find true satisfaction in crafting captivating user
-								interfaces and software solutions, seamlessly blending
-								aesthetics and functionality, while also contributing to
-								research that advances the field of NLP and develops
-								innovative language-based solutions.
+								Creating software that is simple, functional, and
+								visually appealing, with a focus on smooth user
+								experiences.
 							</motion.p>
 						</div>
 						<div className="inline-block">

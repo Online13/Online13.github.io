@@ -1,4 +1,5 @@
 import { BibilPreview } from "@/components/molecules/BibilPreview";
+import { CrsPreview } from "@/components/molecules/CrsPreview";
 import { GeoInfraPreview } from "@/components/molecules/GeoInfraPreview";
 import { PokerApplyPreview } from "@/components/molecules/PokerApplyPreview";
 import { ProjectPreview } from "@/components/molecules/ProjectPreview";
@@ -30,6 +31,11 @@ export function ListSection() {
 				title="Geo-Infrastructure"
 				subtitle="An app for infrastructure mapping in Madagascar."
 				preview={<GeoInfraPreview />}
+			/>
+			<ProjectPreview
+				title="CRS-IPM"
+				subtitle="An app to manage the information contained in PERSUAP document."
+				preview={<CrsPreview />}
 			/>
 		</div>
 	);

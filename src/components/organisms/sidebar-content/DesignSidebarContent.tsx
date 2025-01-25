@@ -1,20 +1,15 @@
-import {
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-} from "@/components/ui/sheet";
-
 export function DesignSidebarContent() {
 	return (
-		<SheetContent className="w-[600px] max-w-none sm:max-w-none ">
-			<SheetHeader>
-				<SheetTitle>Research and Analysis:</SheetTitle>
-				<SheetDescription>
-					I start by understanding the user’s needs and behaviors to create
+		<div className="w-full max-w-none sm:max-w-none ">
+			<header className="flex flex-col space-y-2 text-center sm:text-left">
+				<h3 className="text-lg font-semibold text-foreground">
+					Research and Analysis:
+				</h3>
+				<p className="text-sm text-muted-foreground">
+					I start by understanding the user's needs and behaviors to create
 					a strong design foundation.
-				</SheetDescription>
-			</SheetHeader>
+				</p>
+			</header>
 			<div className="py-8">
 				<div className="space-y-2 text-gray-700 text-sm">
 					<div className="py-2">
@@ -42,11 +37,11 @@ export function DesignSidebarContent() {
 						<h3 className="font-semibold">Testing and Refining:</h3>
 						<p>
 							I test the design with real users to refine and improve it
-							until it’s perfect.
+							until it's perfect.
 						</p>
 					</div>
 				</div>
 			</div>
-		</SheetContent>
+		</div>
 	);
 }

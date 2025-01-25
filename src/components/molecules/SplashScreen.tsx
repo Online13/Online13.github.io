@@ -9,7 +9,7 @@ export function LoadingOverlay({
 	const [mountChildren, setMountChildren] = useState(false);
 
 	return (
-		<div className="w-full h-full flex flex-col font-inter">
+		<div className="w-full h-full flex flex-col font-inter relative">
 			{/* loading screen */}
 			<motion.div
 				animate={variantKey}
@@ -24,7 +24,7 @@ export function LoadingOverlay({
 					console.log(d)
 					setMountChildren(true);
 				}}
-				className="fixed inset-0 w-full h-full"
+				className="absolute inset-0 w-full h-full"
 			>
 				<motion.div
 					animate={variantKey}

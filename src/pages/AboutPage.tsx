@@ -30,7 +30,7 @@ export function SkillSection() {
 						Here are few technologies I actively work with to build
 						projects and solve problems:
 					</p>
-					<div className="grid grid-cols-2 gap-x-2 pt-4">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 pt-4">
 						{SKILLS_DATA.map((skillCategory) => (
 							<SkillItem
 								key={skillCategory.category}
@@ -87,6 +87,7 @@ export function RewardSection() {
 		>
 			<div className="w-full container relative space-y-8">
 				<h2 className="text-lg lg:text-xl font-semibold">Reward</h2>
+				<p className="text-stone-600">Actuellement en développement.</p>
 			</div>
 		</div>
 	);

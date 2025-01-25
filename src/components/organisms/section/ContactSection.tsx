@@ -179,7 +179,7 @@ function ContactForm({ isVisible, focusOn, onClose }: ContactFormProps) {
 	return (
 		<AnimatePresence>
 			{isVisible && (
-				<motion.div className="w-full max-w-[550px] fixed z-50 bottom-0 right-[10%] p-8">
+				<motion.div className="w-full sm:max-w-[550px] fixed z-50 bottom-0 right-0 sm:right-[10%] sm:p-8">
 					<motion.div
 						initial={{ backdropFilter: "blur(0px)" }}
 						animate={{ backdropFilter: "blur(4px)" }}
@@ -194,7 +194,7 @@ function ContactForm({ isVisible, focusOn, onClose }: ContactFormProps) {
 						transition={{ duration: 0.6 }}
 						className="relative z-50"
 					>
-						<Card className="z-50 relative">
+						<Card className="z-50 relative rounded-t-xl rounded-b-none sm:rounded-xl">
 							<CardHeader>
 								<CardTitle>Let's Build Something Together</CardTitle>
 								<CardDescription className="text-sm">
@@ -209,7 +209,7 @@ function ContactForm({ isVisible, focusOn, onClose }: ContactFormProps) {
 									onSubmit={handleSubmit(onSubmit)}
 									className="space-y-4"
 								>
-									<div className="max-w-sm">
+									<div className="w-full">
 										<Label htmlFor="name">Name</Label>
 										<Input
 											id="name"
@@ -226,7 +226,7 @@ function ContactForm({ isVisible, focusOn, onClose }: ContactFormProps) {
 											</p>
 										)}
 									</div>
-									<div className="max-w-sm">
+									<div className="w-full">
 										<Label htmlFor="email">Email</Label>
 										<Input
 											id="email"
@@ -239,7 +239,7 @@ function ContactForm({ isVisible, focusOn, onClose }: ContactFormProps) {
 											</p>
 										)}
 									</div>
-									<div className="max-w-sm">
+									<div className="w-full">
 										<Label htmlFor="description">Description</Label>
 										<Textarea
 											id="description"

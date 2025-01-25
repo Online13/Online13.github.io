@@ -6,7 +6,7 @@ interface EducationItemProps {
 
 export function EducationItem({ place, title, year }: EducationItemProps) {
 	return (
-		<div className="group py-4 pr-4 cursor-pointer hover:bg-stone-100/70 hover:px-4 transition-[padding] duration-500 rounded-md grid grid-cols-3">
+		<div className="group py-4 pr-4 cursor-pointer hover:bg-stone-100/70 hover:px-4 transition-[padding] duration-500 rounded-md grid grid-cols-1 md:grid-cols-3">
 			<h2>{year}</h2>
 			<div className="col-span-2">
 				<b className="">{place}</b>

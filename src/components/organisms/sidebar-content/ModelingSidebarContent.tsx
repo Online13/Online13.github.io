@@ -1,20 +1,15 @@
-import {
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-} from "@/components/ui/sheet";
-
 export function ModelingSidebarContent() {
 	return (
-		<SheetContent className="w-[600px] max-w-none sm:max-w-none ">
-			<SheetHeader>
-				<SheetTitle>Creating Predictive Models:</SheetTitle>
-				<SheetDescription>
+		<div className="w-full max-w-none sm:max-w-none ">
+			<header className="flex flex-col space-y-1.5 text-center sm:text-left">
+				<h3 className="text-lg font-semibold text-foreground">
+					Creating Predictive Models:
+				</h3>
+				<p className="text-sm text-muted-foreground">
 					I build AI and mathematical models to predict future outcomes
 					based on historical data, ensuring accurate forecasts.
-				</SheetDescription>
-			</SheetHeader>
+				</p>
+			</header>
 			<div className="py-8">
 				<div className="space-y-2 text-gray-700 text-sm">
 					<div className="py-2">
@@ -49,6 +44,6 @@ export function ModelingSidebarContent() {
 					</div>
 				</div>
 			</div>
-		</SheetContent>
+		</div>
 	);
 }

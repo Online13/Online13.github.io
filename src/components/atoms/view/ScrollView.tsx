@@ -5,17 +5,17 @@ import { PropsWithChildren } from "react";
 export function ScrollView({ children }: PropsWithChildren) {
 	const updateScroll = useScrollUpdate();
 	return (
-		<ScrollArea
+		<div
 			onScroll={(e) => {
 				const target = e.target as never as {
 					scrollTop: number;
 					scrollHeight: number;
 				};
+				console.log(target.scrollTop, target.scrollHeight);
 				updateScroll(target.scrollTop, target.scrollHeight);
-			}}
-			className="w-full h-full"
+			}}className="w-full h-full overflow-auto"
 		>
 			{children}
-		</ScrollArea>
+		</div>
 	);
 }

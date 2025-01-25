@@ -1,9 +1,10 @@
 import HomePage from "@/pages/HomePage";
 import { ProjectPage } from "@/pages/ProjectPage";
 import { RouteObject } from "react-router-dom";
-import { Layout, MotionBox } from "./Layout";
+import { Layout } from "./Layout";
 import { AboutPage } from "@/pages/AboutPage";
 import { path } from "./path";
+import { MotionBox } from "./MotionBox";
 
 const routes: RouteObject[] = [
 	{

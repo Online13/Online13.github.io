@@ -1,20 +1,15 @@
-import {
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-} from "@/components/ui/sheet";
-
 export function SoftwareEngSidebarContent() {
 	return (
-		<SheetContent className="w-[600px] max-w-none sm:max-w-none">
-			<SheetHeader>
-				<SheetTitle>Software Engineering</SheetTitle>
-				<SheetDescription>
+		<div className="w-full max-w-none sm:max-w-none">
+			<div className="flex flex-col space-y-2 text-center sm:text-left">
+				<h3 className="text-lg font-semibold text-foreground">
+					Software Engineering
+				</h3>
+				<p className="text-sm text-muted-foreground">
 					I offer smart and customized solutions for technical projects,
 					from start to finish:
-				</SheetDescription>
-			</SheetHeader>
+				</p>
+			</div>
 			<div className="py-8">
 				<div className="space-y-2 text-gray-700 text-sm">
 					<div className="py-2">
@@ -54,6 +49,6 @@ export function SoftwareEngSidebarContent() {
 					</div>
 				</div>
 			</div>
-		</SheetContent>
+		</div>
 	);
 }

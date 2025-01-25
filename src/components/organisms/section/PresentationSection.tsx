@@ -14,11 +14,11 @@ export function PresentationSection() {
 		>
 			<div className="w-full container relative space-y-8">
 				<div className="w-full">
-					<div className="w-full grid grid-cols-3 items-center gap-8">
+					<div className="w-full grid grid-cols-1 md:grid-cols-3 items-center gap-8">
 						<div className="">
 							<img
 								src={profileImage}
-								className="w-full h-full aspect-square rounded-md"
+								className="w-full h-full max-w-[246px] aspect-square rounded-md"
 								alt=""
 							/>
 						</div>
@@ -36,7 +36,7 @@ export function PresentationSection() {
 						</div>
 					</div>
 				</div>
-				<div className="grid grid-cols-3 gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 					<div className="">
 						<img
 							src={myCatImage}
