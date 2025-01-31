@@ -12,21 +12,20 @@ export function Layout() {
 	const updateScroll = useScrollUpdate();
 
 	useEffect(() => {
-		updateScroll(0, 0);
+		updateScroll(0);
 	}, [location, updateScroll]);
 
 	return (
-		<AnimatePresence mode="wait">
-			<motion.main
-				className="w-full h-full flex flex-col"
-				key={location.pathname}
-			>
-				<Header />
-				<ScrollView>
-					<div className="w-full">{outlet}</div>
-					<Footer />
-				</ScrollView>
-			</motion.main>
-		</AnimatePresence>
+		<div className="w-full h-screen overflow-hidden flex flex-col">
+			<Header />
+			<ScrollView>
+				<AnimatePresence mode="wait">
+					<motion.main className="w-full" key={location.pathname}>
+						{outlet}
+					</motion.main>
+				</AnimatePresence>
+				<Footer />
+			</ScrollView>
+		</div>
 	);
 }

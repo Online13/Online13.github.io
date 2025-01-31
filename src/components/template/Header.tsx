@@ -7,7 +7,7 @@ import { path } from "@/routes/path";
 
 export function Header() {
 	const scrollValue = useScrollValue();
-	const variantKey = scrollValue <= 450 ? "show" : "hidden";
+	const variantKey = scrollValue <= 0.1 ? "show" : "hidden";
 
 	return (
 		<Fragment>

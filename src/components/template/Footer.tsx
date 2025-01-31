@@ -6,8 +6,8 @@ export function Footer() {
 		<motion.footer
 			layout
 			className="h-56 bg-[#0E0F12] text-slate-100 relative"
-			initial={{ scaleY: 0.5 }}
-			whileInView={{ scaleY: 1 }}
+			initial={{ y: 100 }}
+			whileInView={{ y: 0 }}
 			viewport={{ amount: 0.1 }}
 			style={{ transformOrigin: "bottom" }}
 		>

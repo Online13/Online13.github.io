@@ -21,14 +21,12 @@ export function ProjectSection({ className }: Props) {
 			id="projects"
 		>
 			{/* <FocusView /> */}
-			<div className="container">
-				<h2 className="text-lg lg:text-xl font-semibold">Projects</h2>
+			<div className="container space-y-8">
+				<h2 className="text-xl lg:text-2xl font-semibold">
+					Selected projects.
+				</h2>
 				<div className="w-full">
-					<ProjectPreview
-						title="Bibil"
-						subtitle="An app for easy car rentals in Madagascar."
-						preview={<BibilPreview />}
-					/>
+					<BibilPreview />
 					<ProjectPreview
 						title="PokerApply"
 						subtitle="A chat app for poker player"

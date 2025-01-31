@@ -40,7 +40,7 @@ export function BannerSection({ className }: Props) {
 										/>
 									</div>
 								</motion.div>
-								<div className="text-xl lg:text-2xl font-semibold">
+								<div className="text-2xl lg:text-3xl font-semibold">
 									<div>
 										<h1 className="space-x-2 md:space-x-2 text-left flex items-center overflow-hidden">
 											<motion.span

@@ -1,24 +1,22 @@
 import { create } from "zustand";
 
 interface State {
-	y: number;
-	height: number;
+	scrollValue: number;
 }
 
 interface Action {
-	updateY: (y: number, height: number) => void;
+	updateScrollValue: (value: number) => void;
 }
 
 interface Store extends State, Action {}
 
 export const useScrollStore = create<Store>()((set) => ({
-	y: 0,
-	height: 0,
-	updateY: (y: number, height: number) => set({ y, height }),
+	scrollValue: 0,
+	updateScrollValue: (value) => set({ scrollValue: value }),
 }));
 
-export const useScrollValue = () => useScrollStore((store) => store.y);
+export const useScrollValue = () =>
+	useScrollStore((store) => store.scrollValue);
 
-export const useScrollHeight = () => useScrollStore((store) => store.height);
-
-export const useScrollUpdate = () => useScrollStore((store) => store.updateY);
+export const useScrollUpdate = () =>
+	useScrollStore((store) => store.updateScrollValue);

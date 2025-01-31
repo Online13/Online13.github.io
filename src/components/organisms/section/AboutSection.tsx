@@ -16,8 +16,8 @@ export function AboutSection({ className }: Props) {
 		>
 			<div className="w-full container relative">
 				<div className="w-full">
-					<div className="w-full space-y-2">
-						<h2 className="text-lg lg:text-xl font-semibold">About</h2>
+					<div className="w-full space-y-4">
+						<h2 className="text-xl lg:text-2xl font-semibold">About.</h2>
 						<div className="text-base">
 							<motion.div
 								className="space-y-6 text-stone-700"

@@ -16,8 +16,8 @@ export function ServiceSection({ className }: Props) {
 				className
 			)}
 		>
-			<div className="container space-y-4">
-				<h2 className="text-lg lg:text-xl font-semibold">Services</h2>
+			<div className="container space-y-8">
+				<h2 className="text-xl lg:text-2xl font-semibold">Services.</h2>
 				<div className="w-full">
 					<ServiceCard onClick={() => openSidebar("software-eng")}>
 						<ServiceCard.Header>
