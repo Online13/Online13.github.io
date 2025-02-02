@@ -1,7 +1,6 @@
 import { cn } from "@/utils";
 import { PropsWithChildren } from "react";
-import { motion, MotionConfig } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type ProjectPreviewProps = PropsWithChildren;
 
