@@ -5,7 +5,7 @@ export function ProjectBannerSection() {
 	return (
 		<div
 			className={cn(
-				"w-full py-10 flex flex-col justify-center items-center relative"
+				"w-full py-16 flex flex-col justify-center items-center border-y border-border relative"
 			)}
 		>
 			<h1 className="overflow-hidden flex items-center text-xl lg:text-2xl font-semibold">

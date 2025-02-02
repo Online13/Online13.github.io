@@ -10,7 +10,7 @@ export function EducationItem({ place, title, year }: EducationItemProps) {
 			<h2>{year}</h2>
 			<div className="col-span-2">
 				<b className="">{place}</b>
-				<p className="text-stone-500 group-hover:text-primary transition-colors duration-700">{title}</p>
+				<p className="text-stone-500 group-hover:text-primary transition-colors duration-700 whitespace-nowrap">{title}</p>
 			</div>
 		</div>
 	);

@@ -5,7 +5,6 @@ import { PokerApplyPreview } from "@/components/molecules/PokerApplyPreview";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
-import { ProjectPreview } from "@/components/molecules/ProjectPreview";
 
 interface Props {
 	className?: string;
@@ -22,21 +21,18 @@ export function ProjectSection({ className }: Props) {
 		>
 			{/* <FocusView /> */}
 			<div className="container space-y-8">
-				<h2 className="text-xl lg:text-2xl font-semibold">
-					Selected projects.
-				</h2>
+				<div className="flex justify-between items-center">
+					<h2 className="text-xl lg:text-2xl font-semibold">
+						Selected projects.
+					</h2>
+					<Link to="project">
+						<span className="text-base underline">See more</span>
+					</Link>
+				</div>
 				<div className="w-full">
 					<BibilPreview />
-					<ProjectPreview
-						title="PokerApply"
-						subtitle="A chat app for poker player"
-						preview={<PokerApplyPreview />}
-					/>
-					<ProjectPreview
-						title="Geo-Infrastructure"
-						subtitle="An app for infrastructure mapping in Madagascar."
-						preview={<GeoInfraPreview />}
-					/>
+					<PokerApplyPreview />
+					<GeoInfraPreview />
 				</div>
 				<div className="w-full flex items-center justify-center pt-12">
 					<Link to="project">

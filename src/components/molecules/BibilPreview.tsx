@@ -1,76 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { ChooseMockup } from "../atoms/illustration/bibil/ChooseMockup";
-import { CustomerMockup } from "../atoms/illustration/bibil/CustomerMockup";
 import { ProviderMockup } from "../atoms/illustration/bibil/ProviderMockup";
-import { cn } from "@/utils";
+import { ProjectCard } from "./ProjectCard";
 
 const title = "Bibil";
 const subtitle = "An app for easy car rentals in Madagascar.";
 
 export function BibilPreview() {
 	return (
-		<motion.div
-			initial="initial"
-			whileHover="end"
-			className="group border-b border-b-border cursor-pointer duration-500 rounded-md mt-4"
+		<MotionConfig
+			transition={{
+				duration: 2,
+				ease: "anticipate",
+			}}
 		>
-			<div
-				className={cn(
-					"w-full h-[420px] border border-border hover:border-primary rounded-xl overflow-hidden z-20 flex relative"
-				)}
-			>
-				<motion.div
-					variants={{
-						initial: { flex: 3 },
-						end: { flex: 2 },
-					}}
-					className="flex-[3]"
-				>
-					<motion.div
-						variants={{
-							initial: { height: "100%", opacity: 1 },
-							end: { height: 0, padding: 0, opacity: 0 },
-						}}
-						className="space-y-4 py-4 flex flex-1 items-center justify-center overflow-hidden"
-					>
-						<div className="transition-[padding]">
-							<h2 className="text-xl lg:text-2xl font-semibold text-[#002AFF]">
-								{title}
-							</h2>
-							<h2 className="text-xl lg:text-2xl font-semibold max-w-sm text-stone-500">
-								{subtitle}
-							</h2>
-						</div>
-					</motion.div>
-					<div className="flex flex-1 items-center">
-						<motion.div
-							variants={{
-								initial: { y: 0 },
-								end: { y: 20 },
-							}}
-						>
-							<motion.div className="w-full px-2">
-								<CustomerMockup />
-							</motion.div>
-						</motion.div>
-						<motion.div
-							variants={{
-								initial: { y: 0 },
-								end: { y: 50 },
-							}}
-						>
-							<motion.div className="w-full px-2">
-								<ChooseMockup />
-							</motion.div>
-						</motion.div>
-					</div>
-				</motion.div>
-				<motion.div
-					variants={{
-						initial: { flex: 2 },
-						end: { flex: 1 },
-					}}
-				>
+			<ProjectCard>
+				<ProjectCard.About>
+					<ProjectCard.Title>{title}</ProjectCard.Title>
+					<ProjectCard.Description>{subtitle}</ProjectCard.Description>
+				</ProjectCard.About>
+				<ProjectCard.Preview>
 					<motion.div
 						className="w-full p-2 pt-6"
 						variants={{
@@ -78,16 +27,36 @@ export function BibilPreview() {
 								y: 0,
 							},
 							end: {
-								y: 0,
-								paddingTop: 0
+								y: "-100%",
 							},
+						}}
+						transition={{
+							duration: 2,
+							ease: "anticipate",
 						}}
 					>
 						<ProviderMockup />
 					</motion.div>
-				</motion.div>
-			</div>
-		</motion.div>
+					<motion.div
+						className="w-full p-2 pt-6"
+						variants={{
+							initial: {
+								y: 0,
+							},
+							end: {
+								y: "-100%",
+							},
+						}}
+						transition={{
+							duration: 2,
+							ease: "anticipate",
+						}}
+					>
+						<ChooseMockup />
+					</motion.div>
+				</ProjectCard.Preview>
+			</ProjectCard>
+		</MotionConfig>
 	);
 }
 
